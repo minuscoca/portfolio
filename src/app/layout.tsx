@@ -1,7 +1,7 @@
 import './globals.css'
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
-import colors from 'tailwindcss/colors'
+import { ThemeContextProvider } from '@/hooks/contexts/theme'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -16,13 +16,15 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en">
-      <body className={`${inter.className} relative -z-50 bg-gray-100`}>
-        <LeftBackgroundDecorator />
-        <RightBackgroundDecorator />
-        {children}
-      </body>
-    </html>
+    <ThemeContextProvider>
+      <html lang="en">
+        <body className={`${inter.className} relative -z-50 bg-gray-100`}>
+          <LeftBackgroundDecorator />
+          <RightBackgroundDecorator />
+          {children}
+        </body>
+      </html>
+    </ThemeContextProvider>
   )
 }
 
