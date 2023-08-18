@@ -1,6 +1,6 @@
 'use client'
 
-import { useProductsStore, Product } from "@/hooks/stores/products"
+import { Product, useProducts, useCarts } from '@/hooks/states/products'
 
 export default function Products() {
 
@@ -14,8 +14,8 @@ export default function Products() {
 }
 
 function Prods() {
-  const { products } = useProductsStore()
-  console.log('render Prods')
+  const { products } = useProducts()
+  console.log('render Prods', products)
   return (
     <div className="flex-1">
       <h1 className="mb-4 text-3xl">Products</h1>
@@ -27,8 +27,8 @@ function Prods() {
 }
 
 function Carts() {
-  const { carts } = useProductsStore()
-  console.log('render Carts')
+  const { carts } = useCarts()
+  console.log('render Carts', carts)
   return (
     <aside className="min-w-[10rem] flex flex-col">
       <h1 className="mb-4 text-3xl">Cart</h1>
@@ -40,7 +40,7 @@ function Carts() {
 }
 
 function ProductCard({ product }: { product: Product }) {
-  const { addToCart } = useProductsStore()
+  const { addToCart } = useCarts()
   return (
     <div key={product.id} className="grid grid-cols-3 p-4 rounded-md bg-purple-200">
       <div className="flex flex-col gap-2 col-span-2">
@@ -58,7 +58,7 @@ function ProductCard({ product }: { product: Product }) {
 }
 
 function CartCard({ product }: { product: Product }) {
-  const { removeFromCart } = useProductsStore()
+  const { removeFromCart } = useCarts()
   return (
     <div key={product.id} className="grid grid-cols-3 p-4 rounded-md bg-orange-200">
       <div className="flex flex-col gap-2 col-span-2">
