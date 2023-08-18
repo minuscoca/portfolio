@@ -1,4 +1,5 @@
 import { create } from 'zustand'
+import createSelectors from './createSelectors'
 
 export type Product = {  id: string, name: string, price: string }
 
@@ -19,7 +20,7 @@ const initialProducts: Product[] = [
   { id: '4', name: 'product-4', price: '4' }
 ]
 
-export const useProductsStore = create<State & Action>((set) => ({
+const store = create<State & Action>((set) => ({
   products: initialProducts,
   carts: [],
   addToCart: (product: Product) => set((state) => ({ carts: [...state.carts, product] })),
@@ -30,3 +31,5 @@ export const useProductsStore = create<State & Action>((set) => ({
     return { carts: newCarts}
   }),
 }))
+
+export const useProdStore = createSelectors(store)
