@@ -25,7 +25,8 @@ export const useProductsStore = create<State & Action>((set) => ({
   addToCart: (product: Product) => set((state) => ({ carts: [...state.carts, product] })),
   removeFromCart: (product: Product) => set((state) => {
     const idx = state.carts.findLastIndex(p => p.id === product.id)
-    const newCarts = [...state.carts].splice(idx, 1)
+    const newCarts = [...state.carts]
+    newCarts.splice(idx, 1)
     return { carts: newCarts}
   }),
 }))
