@@ -20,7 +20,7 @@ const initialProducts: Product[] = [
   { id: '4', name: 'product-4', price: '4' }
 ]
 
-export const store = create<State & { actions: Actions }>((set) => ({
+export const useStore = create<State & { actions: Actions }>((set) => ({
   products: initialProducts,
   carts: [],
   // ⬇️ separate "namespace" for actions
@@ -37,4 +37,4 @@ export const store = create<State & { actions: Actions }>((set) => ({
   }
 }))
 
-export const useProductsStore = createSelectors(store)
+export const useProductsStore = createSelectors(useStore)

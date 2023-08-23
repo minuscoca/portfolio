@@ -1,6 +1,6 @@
 'use client'
 
-import { Product, useProductsStore } from "@/hooks/stores/products"
+import { Product, useStore } from "@/hooks/stores/products"
 
 export default function Products() {
 
@@ -14,7 +14,7 @@ export default function Products() {
 }
 
 function Prods() {
-  const products = useProductsStore.use.products()
+  const products = useStore(state => state.products)
   console.log('render Prods', products)
   return (
     <div className="flex-1">
@@ -27,7 +27,7 @@ function Prods() {
 }
 
 function Carts() {
-  const carts = useProductsStore.use.carts()
+  const carts = useStore(state => state.carts)
   console.log('render Carts', carts)
   return (
     <aside className="min-w-[10rem] flex flex-col">
@@ -40,7 +40,7 @@ function Carts() {
 }
 
 function ProductCard({ product }: { product: Product }) {
-  const { addToCart } = useProductsStore().actions
+  const { addToCart } = useStore(state => state.actions)
   return (
     <div key={product.id} className="grid grid-cols-3 p-4 rounded-md bg-purple-200">
       <div className="flex flex-col gap-2 col-span-2">
@@ -58,7 +58,7 @@ function ProductCard({ product }: { product: Product }) {
 }
 
 function CartCard({ product }: { product: Product }) {
-  const { removeFromCart } = useProductsStore().actions
+  const { removeFromCart } = useStore(state => state.actions)
   return (
     <div key={product.id} className="grid grid-cols-3 p-4 rounded-md bg-orange-200">
       <div className="flex flex-col gap-2 col-span-2">
