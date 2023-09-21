@@ -3,16 +3,17 @@ import { ImageIcon } from "lucide-react"
 import { cn } from '@/lib/utils'
 
 import { Section } from '@/app/_sections/section'
-import { type Stack, Languages, Framworks, Server, UILibraries, StateManagements } from "@/_data/stacks"
+import { type Stack, Languages, Framworks, Server, UILibraries, StateManagements, TestLibraries } from "@/_data/stacks"
 
 export function StacksSection() {
   return (
-    <Section id='skills' title='My Skills' className='gap-12 sm:gap-8' divider>
+    <Section id='skills' title='My Skills' divider>
       <StacksComponent title='Languages' stacks={Object.values(Languages)} />
       <StacksComponent title='Framworks' stacks={Object.values(Framworks)} />
       <StacksComponent title='Server' stacks={Object.values(Server)} />
       <StacksComponent title='UI Libraries' stacks={Object.values(UILibraries)} />
       <StacksComponent title='State Managements' stacks={Object.values(StateManagements)} />
+      <StacksComponent title='Test Libaries' stacks={Object.values(TestLibraries)} />
     </Section>
   )
 }

@@ -30,12 +30,18 @@ export const StateManagements = {
   '@tanstack/react-query': { key: '@tanstack/react-query', name: 'Tanstack/React Query', icon: null },
 } as const
 
+export const TestLibraries = {
+  'jest': { key: 'jest', name: 'Jest', icon: null  },
+  'vitest': { key: 'vitest', name: 'vitest', icon: null },
+} as const
+
 export const Stacks = {
   ...Languages,
   ...Framworks,
   ...Server,
   ...UILibraries,
   ...StateManagements,
+  ...TestLibraries
 }
 
 export type Stack = {

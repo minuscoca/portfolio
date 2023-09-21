@@ -2,9 +2,9 @@ import { faker } from '@faker-js/faker'
 
 import { Section } from './section'
 
-export function ExperienceSection() {
+export function ContectSection() {
   return (
-    <Section id='experience' title='Experience' divider>
+    <Section id='contact' title='Contect'>
       <p>{faker.lorem.paragraph()}</p>
       <p>{faker.lorem.paragraph()}</p>
       <p>{faker.lorem.paragraph()}</p>
