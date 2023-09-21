@@ -26,8 +26,8 @@ export function StacksComponent({
   stacks: Stack[]
 }) {
   return (
-    <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-8 w-1/2 sm:w-full">
-      <h1 className="text-xl font-bold sm:justify-self-end">{title}</h1>
+    <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-8 w-full">
+      <h1 className="text-xl font-bold justify-self-start sm:justify-self-end">{title}</h1>
       <ul>
         {stacks.map(stack => <StackComponent key={stack.key} stack={stack} />)}
       </ul>
@@ -40,20 +40,41 @@ export function StackComponent({
 }: {
   stack: Stack
 }) {
-  const ICON_SIZE = 28
-  const shouldShowBackground = stack.key === 'express' || stack.key === 'nextjs'
   return (
     <li key={stack.key} className="flex gap-3 items-center p-2">
-      {
-        stack.icon !== null
-          ? (
-            <div className={cn(`grid place-items-center rounded w-[${ICON_SIZE}px] h-[${ICON_SIZE}px] overflow-hidden`, { 'bg-white': shouldShowBackground, 'p-[2px]': shouldShowBackground })}>
-              <Image alt={stack.key + '_img'} src={stack.icon} width={ICON_SIZE} height={ICON_SIZE} />
-            </div>
-          )
-          : <ImageIcon width={ICON_SIZE} height={ICON_SIZE} className="text-slate-400" />
-      }
+      <StackIcon stack={stack} />
       <p>{stack.name}</p>
     </li>
+  )
+}
+
+function StackIcon({
+  stack
+}: {
+  stack: Stack
+}) {
+  if (!stack.emoji && !stack.icon) return <ImageIcon width={28} height={28} className="text-slate-400" />
+  if (stack.emoji) return (
+    <IconContainer>
+      <span className='text-2xl'>{stack.emoji}</span>
+    </IconContainer>
+  )
+  if (stack.icon) return (
+    <IconContainer showBg={stack.key === 'express' || stack.key === 'nextjs'}>
+      <Image alt={stack.key + '_img'} src={stack.icon} width={28} height={28} />
+    </IconContainer>
+  )
+}
+
+function IconContainer({
+  children,
+  showBg = false,
+}: {
+  showBg?: boolean
+} & React.ComponentProps<'div'>) {
+  return (
+    <div className={cn(`grid place-items-center rounded w-7 h-7 overflow-hidden`, { 'bg-white': showBg, 'p-[2px]': showBg })}>
+      {children}
+    </div>
   )
 }
