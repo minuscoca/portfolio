@@ -60,7 +60,7 @@ function StackIcon({
     </IconContainer>
   )
   if (stack.icon) return (
-    <IconContainer showBg={stack.key === 'express' || stack.key === 'nextjs'}>
+    <IconContainer showBg={stack.key === 'express' || stack.key === 'nextjs' || stack.key === 'shadcn-ui'}>
       <Image alt={stack.key + '_img'} src={stack.icon} width={28} height={28} />
     </IconContainer>
   )

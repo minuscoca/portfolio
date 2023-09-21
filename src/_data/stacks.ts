@@ -18,7 +18,7 @@ export const UILibraries = {
   'bootstrap': { key: 'bootstrap', name: 'Bootstrap', icon: '/stack-icons/bootstrap.svg' },
   '@mui/material': { key: '@mui/material', name: 'Material Ui', icon: '/stack-icons/material-ui.svg' },
   '@radix-ui': { key: '@radix-ui', name: 'Radix Ui', icon: '/stack-icons/radix-ui.png' },
-  'shadcn': { key: 'shadcn', name: 'Shadcn', icon: null },
+  'shadcn-ui': { key: 'shadcn-ui', name: 'Shadcn Ui', icon: '/stack-icons/shadcn-ui.svg' },
   '@tanstack/react-table': { key: '@tanstack/react-table', name: 'React Table', icon: null },
   'framer-motion': { key: 'framer-motion', name: 'Framer Motion', icon: '/stack-icons/framer-motion.webp' },
 } as const
