@@ -13,7 +13,7 @@ export function Section({
 } & React.ComponentProps<'section'>) {
   return (
     <>
-      <section id={id} className={cn('grid place-items-center text-center scroll-mt-20 gap-12 sm:gap-8 max-w-5xl', className)}>
+      <section id={id} className={cn('grid place-items-center text-center scroll-mt-24 gap-12 sm:gap-8 max-w-3xl', className)}>
         <h1 className='text-3xl my-4'>{title}</h1>
         {children}
       </section>

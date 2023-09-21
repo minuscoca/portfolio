@@ -1,11 +1,11 @@
 import './globals.css'
 import type { Metadata } from 'next'
-import { Inter } from 'next/font/google'
+import { Montserrat } from 'next/font/google'
 import { ThemeProvider } from '@/components/theme/theme-provider'
 import { Navbar } from '@/components/navbar'
 import { ThemeToggle } from '@/components/theme/theme-toggle'
 
-const font = Inter({ subsets: ['latin'] })
+const font = Montserrat({ subsets: ['latin'], weight: '200' })
 
 export const metadata: Metadata = {
   title: 'Kevin | Personal Portfolio',
