@@ -4,7 +4,7 @@ type K = "dim_pos" | "dim_rider" | "dim_order" | "dim_admin" | "dim_pay";
 // | "merchant_dashboard";
 
 export type Project = {
-  key: keyof typeof Projects;
+  key: keyof typeof Data;
   name: string;
   desc: string;
   stacks: Stack[];
@@ -14,7 +14,7 @@ export type Project = {
   };
 };
 
-export const Projects: Record<K, Project> = {
+export const Data: Record<K, Project> = {
   dim_pos: {
     key: "dim_pos",
     name: "DimPOS",

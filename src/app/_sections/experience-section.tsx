@@ -1,6 +1,6 @@
 import { Section } from "./section";
 import { cn } from "@/lib/utils";
-import { Timelines, type Timeline } from "@/_data/timeline";
+import { Data, type Timeline } from "@/_data/timeline";
 
 export function ExperienceSection() {
   return (
@@ -11,7 +11,7 @@ export function ExperienceSection() {
       fullwidth
       className="max-w-5xl"
     >
-      <Timeline data={Timelines} />
+      <Timeline data={Data} />
     </Section>
   );
 }
