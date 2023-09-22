@@ -1,8 +1,8 @@
 import { type Project } from "@/_data/projects";
-import { type Stack, type Framwork } from "@/_data/stacks";
+import { type Stack } from "@/_data/stacks";
 import { Badge } from "@/components/ui/badge";
 import { AppStoreButton } from "./app-store-button";
-import Image from "next/image";
+import Image, { ImageProps } from "next/image";
 import {
   Dialog,
   DialogContent,
@@ -10,6 +10,7 @@ import {
   DialogTitle,
   DialogTrigger,
 } from "@/components/ui/dialog"
+import { cn } from "@/lib/utils";
 
 export function Project({ project }: { project: Project }) {
   return (
@@ -22,7 +23,7 @@ export function Project({ project }: { project: Project }) {
             <ProjectStacks stacks={project.stacks} />
           </div>
           <div className="relative aspect-square sm:aspect-auto">
-            <ProjectImage project={project} />
+            <ProjectImages project={project} />
           </div>
         </div>
       </DialogTrigger>
@@ -88,35 +89,66 @@ function ProjectDesc({ desc }: { desc: string }) {
   );
 }
 
-function ProjectImage({ project }: { project: Project }) {
-  const image = project.images?.[0] ?? ''
+function ProjectImages({ project }: { project: Project }) {
+  return (
+    project.images?.map((image, index) => <ProjectImage key={project.key} image={image} project={project} index={index} />)
+  )
+}
+
+function ProjectImage({ image, project, index }: { image: string, project: Project, index: number }) {
+  const zIndex = 4 - index
+  if (index > 3) return null
   return (
     <Image
-      alt={`${project.key}_sample_image`}
       src={image}
+      alt={`${project.key}_sample_image`}
       fill
-      className="
+      style={{ zIndex }}
+      className={cn(`
+      opacity-0
+      group-hover:opacity-100
+
       object-cover
-      object-left
+      object-left 
+
+      origin-bottom
+      sm:origin-bottom-right 
+      sm:group-even:origin-bottom-left
+
       transition-all
       duration-300
       sm:rounded-2xl
-
-      sm:-rotate-2
-      sm:group-odd:rotate-2
-      sm:group-hover:rotate-0
-
       sm:translate-x-4
       sm:group-odd:-translate-x-4
       sm:group-hover:translate-x-0
-
       sm:translate-y-8
       sm:group-hover:translate-y-0
-
-      sm:scale-105
-      sm:group-hover:scale-100
-      sm:group-hover:rounded-none
-      "
+      sm:scale-95
+      sm:group-hover:scale-{96}
+      sm:rotate-2
+      sm:group-odd:-rotate-2
+      group-hover:rounded-xl
+      group-hover:scale-90
+      `, {
+        "opacity-100": index === 0,
+        "sm:group-hover:-rotate-4": index === 0,
+        "sm:group-hover:-rotate-0": index === 1,
+        "sm:group-hover:rotate-4": index === 2,
+        "sm:group-hover:rotate-8": index === 3,
+        "sm:group-odd:group-hover:rotate-4": index === 0,
+        "sm:group-odd:group-hover:rotate-0": index === 1,
+        "sm:group-odd:group-hover:-rotate-4": index === 2,
+        "sm:group-odd:group-hover:-rotate-8": index === 3,
+        "group-hover:translate-y-12 group-hover:-rotate-4": index === 0,
+        "group-hover:translate-y-8 group-hover:rotate-0": index === 1,
+        "group-hover:translate-y-4 group-hover:rotate-4": index === 2,
+        "group-hover:translate-y-0 group-hover:rotate-8": index === 3,
+      })}
     />
   );
 }
+
+
+// sm:-rotate-2
+// sm:group-odd:rotate-2
+// sm:group-hover:rotate-0

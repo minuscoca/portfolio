@@ -51,6 +51,11 @@ module.exports = {
           foreground: "hsl(var(--card-foreground))",
         },
       },
+      rotate: {
+        "4": "4deg",
+        "8": "8deg",
+        "10": "10deg",
+      },
       borderRadius: {
         lg: "var(--radius)",
         md: "calc(var(--radius) - 2px)",
