@@ -6,16 +6,13 @@ import Image from "next/image";
 
 export function Project({ project }: { project: Project }) {
   return (
-    <div className="group grid w-full cursor-pointer grid-cols-1 overflow-hidden rounded-xl bg-rose-100 dark:bg-rose-800/50 sm:grid-cols-2">
-      <div
-        id="project_detail"
-        className="relative flex min-h-[10rem] flex-col px-4 sm:group-even:order-last"
-      >
+    <div className="group grid w-full cursor-pointer grid-cols-1 overflow-hidden rounded-xl bg-secondary sm:grid-cols-2 min-h-[30rem]">
+      <div id="project_detail" className="relative flex flex-col px-4 sm:group-odd:order-last">
         <ProjectHeader project={project} />
         <ProjectDesc desc={project.desc} />
         <ProjectStacks stacks={project.stacks} />
       </div>
-      <div className="relative aspect-square overflow-hidden">
+      <div className="relative aspect-square sm:aspect-auto">
         <ProjectImage project={project} />
       </div>
     </div>
@@ -74,35 +71,34 @@ function ProjectDesc({ desc }: { desc: string }) {
 }
 
 function ProjectImage({ project }: { project: Project }) {
+  const image = project.images?.[0] ?? ''
   return (
-    <div
-      id="project_image"
+    <Image
+      alt={`${project.key}_sample_image`}
+      src={image}
+      fill
       className="
-      rotate absolute right-4 h-full w-full origin-top-left translate-x-4
-      translate-y-4
-      overflow-hidden
-      sm:rounded-xl
+      object-cover
+      object-left
       transition-all
-      group-even:-right-4
-      group-even:origin-top-right
-      group-even:-translate-x-4
-      group-hover:translate-y-16
-      group-hover:-rotate-1
-      group-hover:scale-110
-      group-even:group-hover:rotate-1
-    "
-    >
-      {project.images ? (
-        <Image
-          alt={`${project.key}_sample_image`}
-          src={project.images[0]}
-          fill
-          objectFit="cover"
-          className="object-contain object-left"
-        />
-      ) : (
-        <div>Empty Image</div>
-      )}
-    </div>
+      duration-300
+      sm:rounded-2xl
+
+      sm:-rotate-2
+      sm:group-odd:rotate-2
+      sm:group-hover:rotate-0
+
+      sm:translate-x-4
+      sm:group-odd:-translate-x-4
+      sm:group-hover:translate-x-0
+
+      sm:translate-y-8
+      sm:group-hover:translate-y-0
+
+      sm:scale-105
+      sm:group-hover:scale-100
+      sm:group-hover:rounded-none
+      "
+    />
   );
 }
