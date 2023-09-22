@@ -18,7 +18,7 @@ export const Data: Record<K, Project> = {
   dim_pos: {
     key: "dim_pos",
     name: "DimPOS",
-    desc: "DimPOS | 一站式雲端餐飲系統\n\n一個全方位雲端餐飲POS機，令你輕鬆管理餐廳提升銷售盈利，客製化的餐飲系統適用不同餐廳類別: 中菜店、火鍋店、日式料理及咖啡廳等，提供超過100款自訂選項設定堂食、外賣自取及外送服務以製定電子化餐牌、前枱坐位及開枱設定、廚房收取訂單設定、銷售數據分析及食材預訂管理等。同時，POS系統更支援電子貨幣付款方式、連接香港跨區外送平台應用程式及自家開發CRM系統。DimPOS App能全天侯掌握餐廳最新狀況及營運數據，讓你更容易提升餐廳效率!",
+    desc: "DimPOS | 一站式雲端餐飲系統\n\n包含餐廳營業設定、菜單設定、店內點餐系統、外帶與外送接單系統、現金結帳與多種付款方式。",
     stacks: [Stacks["react-native"], Stacks.redux],
     images: [
       "/project-images/dim-pos/img-0.png",
@@ -34,7 +34,7 @@ export const Data: Record<K, Project> = {
   dim_order: {
     key: "dim_order",
     name: "DimOrder",
-    desc: "DimOrder｜全港跨區外賣平台。\n\n提供堂食、外帶、外送等多種餐廳服務，另提供平台積分兌換與客戶關係管理等多樣功能。",
+    desc: "DimOrder｜外賣平台 App\n\n提供堂食、外帶、外送等多種餐廳服務，另提供平台積分兌換與客戶關係管理等多樣功能。",
     stacks: [Stacks.react, Stacks.redux, Stacks["@tanstack/react-query"]],
     images: [
       "/project-images/dim-order/img-0.png",
@@ -52,7 +52,7 @@ export const Data: Record<K, Project> = {
   dim_rider: {
     key: "dim_rider",
     name: "DimRider",
-    desc: "DimRider | 提供 DimOrder 點單司機承接 DimOrder 外送訂單，查看外送訂單內容的便捷工具。\n\nDimRider 為專為DimOrder點單司機設計的接單App。透過DimRider，可輕鬆查看目前的外送訂單狀況，並可一鍵承接訂單。於訂定畫面中，可一目暸然目前外送訂單的取餐時間、預計送達時間。訂單數量，也方便與DimOrder營運人員聯繫。在設定畫面中，也可查詢個人的接單數據統計，方便查詢自己的歷史接單紀錄。",
+    desc: "DimRider | 為 DimOrder 點單司機設計的接單 App\n\n可查看目前的外送訂單狀態並承接外送訂單。於訂定畫面中，可一目暸然目前外送訂單的取餐時間、預計送達時間、訂單數量等。在設定畫面中，也可查詢個人的接單數據統計，方便查詢自己的歷史接單紀錄。",
     stacks: [Stacks["react-native"], Stacks.redux],
     images: [
       "/project-images/dim-rider/img-0.png",
