@@ -6,13 +6,15 @@ import Image from 'next/image'
 
 export function Project({ project }: { project: Project }) {
   return (
-    <div className="grid w-full grid-cols-1 sm:grid-cols-2 rounded-xl overflow-hidden group cursor-pointer">
-      <div id="project_detail" className="relative min-h-[10rem] flex flex-col bg-rose-100 dark:bg-rose-800/75 px-4">
+    <div className="grid w-full grid-cols-1 sm:grid-cols-2 rounded-xl overflow-hidden group cursor-pointer bg-rose-100 dark:bg-rose-800/60">
+      <div id="project_detail" className="relative min-h-[10rem] flex flex-col px-4 group-even:order-last">
         <ProjectHeader project={project} />
         <ProjectDesc desc={project.desc} />
         <ProjectStacks stacks={project.stacks} />
       </div>
-      <ProjectImage project={project} />
+      <div className="relative aspect-square overflow-hidden">
+        <ProjectImage project={project} />
+      </div>
     </div>
   );
 }
@@ -44,26 +46,35 @@ function ProjectHeader({ project }: { project: Project }) {
 
 function ProjectDesc({ desc }: { desc: string }) {
   return (
-    <>
-      <p className="flex-1 whitespace-pre-line text-start text-sm leading-6 p-4">{desc}</p>
-    </>
+    <p className="flex-1 whitespace-pre-line text-start text-sm leading-6 p-4">{desc}</p>
   )
 }
 
 function ProjectImage({ project }: { project: Project }) {
   return (
-    <div id="project_image" className="relative bg-secondary aspect-square overflow-hidden">
-      <div className="relative w-full h-full overflow-hidden transition-all group-hover:scale-105">
-        {project.images
-          ? <Image
-            alt={`${project.key}_image`}
-            src={project.images[0]}
-            fill
-            objectFit='cover'
-            className='object-contain object-left'
-          />
-          : <div>Empty Image</div>}
-      </div>
+    <div id="project_image" className="
+      absolute w-full h-full rounded-xl overflow-hidden transition-all rotate
+      right-4
+      group-even:-right-4
+      origin-top-left
+      group-even:origin-top-right
+      translate-y-4
+      translate-x-4
+      group-even:-translate-x-4
+      group-hover:-rotate-1
+      group-even:group-hover:rotate-1
+      group-hover:translate-y-16
+      group-hover:scale-110
+    ">
+      {project.images
+        ? <Image
+          alt={`${project.key}_sample_image`}
+          src={project.images[0]}
+          fill
+          objectFit='cover'
+          className='object-contain object-left'
+        />
+        : <div>Empty Image</div>}
     </div>
   )
 }

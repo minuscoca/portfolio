@@ -8,7 +8,8 @@ type UILibrary =
   | "@radix-ui"
   | "shadcn-ui"
   | "@tanstack/react-table"
-  | "framer-motion";
+  | "framer-motion"
+  | "react-native-paper";
 type StateLibrary = "redux" | "zustand" | "jotai" | "@tanstack/react-query";
 
 export type Stack = {
@@ -80,6 +81,11 @@ export const UILibraries: Record<UILibrary, Stack> = {
     key: "framer-motion",
     name: "Framer Motion",
     icon: "/stack-icons/framer-motion.webp",
+  },
+  "react-native-paper": {
+    key: "react-native-paper",
+    name: "React Native Paper",
+    icon: "/stack-icons/react-native-paper.svg",
   },
 };
 
