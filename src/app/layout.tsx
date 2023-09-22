@@ -5,7 +5,7 @@ import { ThemeProvider } from "@/components/theme/theme-provider";
 import { Navbar } from "@/components/navbar";
 import { ThemeToggle } from "@/components/theme/theme-toggle";
 
-const font = Montserrat({ subsets: ["latin"], weight: "200" });
+const montserrat = Montserrat({ subsets: ["latin"], weight: "200" });
 
 export const metadata: Metadata = {
   title: "Kevin | Personal Portfolio",
@@ -20,7 +20,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${font.className} relative -z-50 transition-colors duration-300 ease-in-out`}
+        className={`${montserrat.className} relative -z-50 transition-colors duration-300 ease-in-out`}
       >
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
           <Navbar />
