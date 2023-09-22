@@ -3,19 +3,37 @@ import { type Stack, type Framwork } from "@/_data/stacks";
 import { Badge } from "@/components/ui/badge";
 import { AppStoreButton } from "./app-store-button";
 import Image from "next/image";
+import {
+  Dialog,
+  DialogContent,
+  DialogHeader,
+  DialogTitle,
+  DialogTrigger,
+} from "@/components/ui/dialog"
 
 export function Project({ project }: { project: Project }) {
   return (
-    <div className="group grid w-full cursor-pointer grid-cols-1 overflow-hidden rounded-xl bg-secondary sm:grid-cols-2 min-h-[30rem]">
-      <div id="project_detail" className="relative flex flex-col px-4 sm:group-odd:order-last">
-        <ProjectHeader project={project} />
-        <ProjectDesc desc={project.desc} />
-        <ProjectStacks stacks={project.stacks} />
-      </div>
-      <div className="relative aspect-square sm:aspect-auto">
-        <ProjectImage project={project} />
-      </div>
-    </div>
+    <Dialog>
+      <DialogTrigger asChild>
+        <div className="group grid w-full cursor-pointer grid-cols-1 overflow-hidden rounded-xl bg-secondary sm:grid-cols-2 min-h-[30rem]">
+          <div id="project_detail" className="relative flex flex-col px-4 sm:group-odd:order-last">
+            <ProjectHeader project={project} />
+            <ProjectDesc desc={project.desc} />
+            <ProjectStacks stacks={project.stacks} />
+          </div>
+          <div className="relative aspect-square sm:aspect-auto">
+            <ProjectImage project={project} />
+          </div>
+        </div>
+      </DialogTrigger>
+      <DialogContent>
+        <DialogHeader>
+          <DialogTitle className="font-thin">
+            {project.title}
+          </DialogTitle>
+        </DialogHeader>
+      </DialogContent>
+    </Dialog>
   );
 }
 
