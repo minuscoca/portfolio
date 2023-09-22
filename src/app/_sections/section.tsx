@@ -1,4 +1,4 @@
-import { cn } from '@/lib/utils'
+import { cn } from "@/lib/utils";
 
 export function Section({
   id,
@@ -6,18 +6,29 @@ export function Section({
   divider,
   children,
   className,
+  fullwidth,
 }: {
-  id: string
-  title: string
-  divider?: boolean
-} & React.ComponentProps<'section'>) {
+  id: string;
+  title: string;
+  divider?: boolean;
+  fullwidth?: boolean;
+} & React.ComponentProps<"section">) {
   return (
     <>
-      <section id={id} className={cn('grid place-items-center text-center scroll-mt-24 gap-12 sm:gap-8 max-w-3xl', className)}>
-        <h1 className='text-3xl my-4'>{title}</h1>
+      <section
+        id={id}
+        className={cn(
+          "grid max-w-3xl scroll-mt-24 place-items-center gap-12 text-center sm:gap-8",
+          className,
+          { "w-full": fullwidth },
+        )}
+      >
+        <h1 className="my-4 text-3xl">{title}</h1>
         {children}
       </section>
-      {divider && <span className='h-16 w-1 bg-border m-8 justify-self-center rounded-full' />}
+      {divider && (
+        <span className="m-8 h-16 w-1 justify-self-center rounded-full bg-border" />
+      )}
     </>
-  )
+  );
 }
