@@ -12,7 +12,7 @@ import {
 
 export function IntroSection() {
   return (
-    <Section id="home" title="Home" divider>
+    <Section id="home" divider>
       <MyAvatar />
       <p className="text-lg">
         <b>Hi，我是王楷筌</b>，也可以叫我 Kevin。 我是一名<b>前端工程師</b>

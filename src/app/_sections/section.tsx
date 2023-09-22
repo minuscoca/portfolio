@@ -9,7 +9,7 @@ export function Section({
   fullwidth,
 }: {
   id: string;
-  title: string;
+  title?: string;
   divider?: boolean;
   fullwidth?: boolean;
 } & React.ComponentProps<"section">) {
