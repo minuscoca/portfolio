@@ -1,7 +1,7 @@
-type Language = "typescript";
-type Framwork = "react" | "react-native" | "nextjs";
-type Server = "nodejs" | "express";
-type UILibrary =
+export type Language = "typescript";
+export type Framwork = "react" | "react-native" | "nextjs";
+export type Server = "nodejs" | "express";
+export type UILibrary =
   | "tailwindcss"
   | "bootstrap"
   | "@mui/material"
@@ -10,7 +10,7 @@ type UILibrary =
   | "@tanstack/react-table"
   | "framer-motion"
   | "react-native-paper";
-type StateLibrary = "redux" | "zustand" | "jotai" | "@tanstack/react-query";
+  export type StateLibrary = "redux" | "zustand" | "jotai" | "@tanstack/react-query";
 
 export type Stack = {
   key: keyof typeof Stacks;
