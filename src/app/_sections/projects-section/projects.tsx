@@ -9,15 +9,18 @@ import {
   DialogHeader,
   DialogTitle,
   DialogTrigger,
-} from "@/components/ui/dialog"
+} from "@/components/ui/dialog";
 import { cn } from "@/lib/utils";
 
 export function Project({ project }: { project: Project }) {
   return (
     <Dialog>
       <DialogTrigger asChild>
-        <div className="group grid w-full cursor-pointer grid-cols-1 overflow-hidden rounded-xl bg-secondary sm:grid-cols-2 min-h-[30rem]">
-          <div id="project_detail" className="relative flex flex-col px-4 sm:group-odd:order-last">
+        <div className="group grid min-h-[30rem] w-full cursor-pointer grid-cols-1 overflow-hidden rounded-xl bg-secondary sm:grid-cols-2">
+          <div
+            id="project_detail"
+            className="relative flex flex-col px-4 sm:group-odd:order-last"
+          >
             <ProjectHeader project={project} />
             <ProjectDesc desc={project.desc} />
             <ProjectStacks stacks={project.stacks} />
@@ -29,9 +32,7 @@ export function Project({ project }: { project: Project }) {
       </DialogTrigger>
       <DialogContent>
         <DialogHeader>
-          <DialogTitle className="font-thin">
-            {project.title}
-          </DialogTitle>
+          <DialogTitle className="font-thin">{project.title}</DialogTitle>
         </DialogHeader>
       </DialogContent>
     </Dialog>
@@ -54,26 +55,21 @@ function ProjectStacks({ stacks }: { stacks: Stack[] }) {
 }
 
 function ProjectFramworkIcon({ stacks }: { stacks: Stack[] }) {
-  const fromwork = stacks.find(stack => stack.key === 'react' || stack.key === 'react-native')
-  if (!fromwork?.icon) return null
+  const fromwork = stacks.find(
+    (stack) => stack.key === "react" || stack.key === "react-native",
+  );
+  if (!fromwork?.icon) return null;
   return (
-    <Image
-      alt='framwork_icon'
-      src={fromwork.icon}
-      width={24}
-      height={24}
-    />
-  )
+    <Image alt="framwork_icon" src={fromwork.icon} width={24} height={24} />
+  );
 }
 
 function ProjectHeader({ project }: { project: Project }) {
   return (
     <>
-      <div className="flex mt-4 px-4 gap-4 justify-center">
+      <div className="mt-4 flex justify-center gap-4 px-4">
         <ProjectFramworkIcon stacks={project.stacks} />
-        <h1 className="text-3xl font-extrabold">
-          {project.name}
-        </h1>
+        <h1 className="text-3xl font-extrabold">{project.name}</h1>
       </div>
       <AppStoreButton href={project.links?.appStore} />
       <span className="mt-2 h-[1px] w-full rounded bg-foreground/30" />
@@ -90,64 +86,76 @@ function ProjectDesc({ desc }: { desc: string }) {
 }
 
 function ProjectImages({ project }: { project: Project }) {
-  return (
-    project.images?.map((image, index) => <ProjectImage key={project.key} image={image} project={project} index={index} />)
-  )
+  return project.images?.map((image, index) => (
+    <ProjectImage
+      key={project.key}
+      image={image}
+      project={project}
+      index={index}
+    />
+  ));
 }
 
-function ProjectImage({ image, project, index }: { image: string, project: Project, index: number }) {
-  const zIndex = 4 - index
-  if (index > 3) return null
+function ProjectImage({
+  image,
+  project,
+  index,
+}: {
+  image: string;
+  project: Project;
+  index: number;
+}) {
+  const zIndex = 4 - index;
+  if (index > 3) return null;
   return (
     <Image
       src={image}
       alt={`${project.key}_sample_image`}
       fill
       style={{ zIndex }}
-      className={cn(`
-      opacity-0
-      group-hover:opacity-100
-
-      object-cover
-      object-left 
-
-      origin-bottom
-      sm:origin-bottom-right 
-      sm:group-even:origin-bottom-left
-
-      transition-all
-      duration-300
-      sm:rounded-2xl
-      sm:translate-x-4
-      sm:group-odd:-translate-x-4
-      sm:group-hover:translate-x-0
-      sm:translate-y-8
-      sm:group-hover:translate-y-0
-      sm:scale-95
-      sm:group-hover:scale-{96}
-      sm:rotate-2
-      sm:group-odd:-rotate-2
-      group-hover:rounded-xl
-      group-hover:scale-90
-      `, {
-        "opacity-100": index === 0,
-        "sm:group-hover:-rotate-4": index === 0,
-        "sm:group-hover:-rotate-0": index === 1,
-        "sm:group-hover:rotate-4": index === 2,
-        "sm:group-hover:rotate-8": index === 3,
-        "sm:group-odd:group-hover:rotate-4": index === 0,
-        "sm:group-odd:group-hover:rotate-0": index === 1,
-        "sm:group-odd:group-hover:-rotate-4": index === 2,
-        "sm:group-odd:group-hover:-rotate-8": index === 3,
-        "group-hover:translate-y-12 group-hover:-rotate-4": index === 0,
-        "group-hover:translate-y-8 group-hover:rotate-0": index === 1,
-        "group-hover:translate-y-4 group-hover:rotate-4": index === 2,
-        "group-hover:translate-y-0 group-hover:rotate-8": index === 3,
-      })}
+      className={cn(
+        `
+        sm:group-hover:scale-{96}
+        origin-bottom
+        object-cover
+        object-left 
+        opacity-0
+        transition-all 
+        duration-300
+        group-hover:scale-90
+        group-hover:rounded-xl
+        group-hover:opacity-100
+        sm:origin-bottom-right
+        sm:translate-x-4
+        sm:translate-y-8
+        sm:rotate-2
+        sm:scale-95
+        sm:rounded-2xl
+        sm:group-odd:-translate-x-4
+        sm:group-odd:-rotate-2
+        sm:group-even:origin-bottom-left
+        sm:group-hover:translate-x-0
+        sm:group-hover:translate-y-0
+      `,
+        {
+          "opacity-100": index === 0,
+          "sm:group-hover:-rotate-4": index === 0,
+          "sm:group-hover:-rotate-0": index === 1,
+          "sm:group-hover:rotate-4": index === 2,
+          "sm:group-hover:rotate-8": index === 3,
+          "sm:group-odd:group-hover:rotate-4": index === 0,
+          "sm:group-odd:group-hover:rotate-0": index === 1,
+          "sm:group-odd:group-hover:-rotate-4": index === 2,
+          "sm:group-odd:group-hover:-rotate-8": index === 3,
+          "group-hover:translate-y-12 group-hover:-rotate-4": index === 0,
+          "group-hover:translate-y-8 group-hover:rotate-0": index === 1,
+          "group-hover:translate-y-4 group-hover:rotate-4": index === 2,
+          "group-hover:translate-y-0 group-hover:rotate-8": index === 3,
+        },
+      )}
     />
   );
 }
-
 
 // sm:-rotate-2
 // sm:group-odd:rotate-2

@@ -10,7 +10,11 @@ export type UILibrary =
   | "@tanstack/react-table"
   | "framer-motion"
   | "react-native-paper";
-  export type StateLibrary = "redux" | "zustand" | "jotai" | "@tanstack/react-query";
+export type StateLibrary =
+  | "redux"
+  | "zustand"
+  | "jotai"
+  | "@tanstack/react-query";
 
 export type Stack = {
   key: keyof typeof Stacks;
