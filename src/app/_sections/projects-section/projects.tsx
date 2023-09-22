@@ -1,13 +1,14 @@
 import { type Project } from "@/_data/projects";
 import { type Stack } from "@/_data/stacks";
 import { Badge } from "@/components/ui/badge";
+import { AppStoreButton } from "./app-store-button";
 import Image from 'next/image'
 
 export function Project({ project }: { project: Project }) {
   return (
     <div className="grid w-full grid-cols-1 sm:grid-cols-2 rounded-xl overflow-hidden group cursor-pointer">
-      <div id="project_detail" className="min-h-[10rem] flex flex-col bg-rose-100 dark:bg-rose-800/75 px-4">
-        <ProjectName name={project.name} />
+      <div id="project_detail" className="relative min-h-[10rem] flex flex-col bg-rose-100 dark:bg-rose-800/75 px-4">
+        <ProjectHeader project={project} />
         <ProjectDesc desc={project.desc} />
         <ProjectStacks stacks={project.stacks} />
       </div>
@@ -31,11 +32,12 @@ function ProjectStacks({ stacks }: { stacks: Stack[] }) {
   );
 }
 
-function ProjectName({ name }: { name: string }) {
+function ProjectHeader({ project }: { project: Project }) {
   return (
     <>
-      <h1 className="text-3xl font-extrabold p-4">{name}</h1>
-      <span className="w-full h-[1px] rounded bg-foreground/30" />
+      <h1 className="text-3xl font-extrabold px-4 mt-4">{project.name}</h1>
+      <AppStoreButton href={project.links?.appStore} />
+      <span className="w-full h-[1px] rounded bg-foreground/30 mt-2" />
     </>
   )
 }
@@ -50,13 +52,15 @@ function ProjectDesc({ desc }: { desc: string }) {
 
 function ProjectImage({ project }: { project: Project }) {
   return (
-    <div id="project_image" className="relative bg-secondary aspect-square">
+    <div id="project_image" className="relative bg-secondary aspect-square overflow-hidden">
       <div className="relative w-full h-full overflow-hidden transition-all group-hover:scale-110">
         {project.images
           ? <Image
             alt={`${project.key}_image`}
             src={project.images[0]}
             fill
+            objectFit='cover'
+            objectPosition='left'
           />
           : <div>Empty Image</div>}
       </div>
