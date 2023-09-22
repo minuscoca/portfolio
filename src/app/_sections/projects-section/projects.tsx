@@ -53,14 +53,14 @@ function ProjectDesc({ desc }: { desc: string }) {
 function ProjectImage({ project }: { project: Project }) {
   return (
     <div id="project_image" className="relative bg-secondary aspect-square overflow-hidden">
-      <div className="relative w-full h-full overflow-hidden transition-all group-hover:scale-110">
+      <div className="relative w-full h-full overflow-hidden transition-all group-hover:scale-105">
         {project.images
           ? <Image
             alt={`${project.key}_image`}
             src={project.images[0]}
             fill
             objectFit='cover'
-            objectPosition='left'
+            className='object-contain object-left'
           />
           : <div>Empty Image</div>}
       </div>

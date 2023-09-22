@@ -3,7 +3,7 @@ import { Stacks, type Stack } from "./stacks";
 type K =
   | "dim_pos"
   | "dim_rider"
-  | "customer_app"
+  | "dim_order"
   | "admin_pannel"
   | "merchant_dashboard";
 
@@ -56,11 +56,23 @@ export const Projects: Record<K, Project> = {
       appStore: 'https://apps.apple.com/hk/app/id1592248182',
     }
   },
-  customer_app: {
-    key: "customer_app",
-    name: "Customer App",
-    desc: "",
+  dim_order: {
+    key: "dim_order",
+    name: "DimOrder",
+    desc: "DimOrder｜全港跨區外賣平台。\n\n提供堂食、外帶、外送等多種餐廳服務，另提供平台積分兌換與客戶關係管理等多樣功能。",
     stacks: [Stacks.react, Stacks.redux, Stacks["@tanstack/react-query"]],
+    images: [
+      '/project-images/dim-order/img-0.png',
+      '/project-images/dim-order/img-1.png',
+      '/project-images/dim-order/img-2.png',
+      '/project-images/dim-order/img-3.png',
+      '/project-images/dim-order/img-4.png',
+      '/project-images/dim-order/img-5.png',
+      '/project-images/dim-order/img-6.png',
+    ],
+    links: {
+      appStore: 'https://apps.apple.com/hk/app/id1558146057'
+    }
   },
   admin_pannel: {
     key: "admin_pannel",
