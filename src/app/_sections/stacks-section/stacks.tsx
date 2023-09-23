@@ -2,6 +2,7 @@ import Image from "next/image";
 import { ImageIcon } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { type Stack } from "@/_data/stacks";
+import { StackTransitionContainer } from "./stack-transition-container";
 
 export function StacksComponent({
   title,
@@ -26,10 +27,13 @@ export function StacksComponent({
 
 export function StackComponent({ stack }: { stack: Stack }) {
   return (
-    <li key={stack.key} className="flex items-center gap-3 p-2">
+    <StackTransitionContainer
+      key={stack.key}
+      className="flex items-center gap-3 p-2"
+    >
       <StackIcon stack={stack} />
       <p>{stack.name}</p>
-    </li>
+    </StackTransitionContainer>
   );
 }
 

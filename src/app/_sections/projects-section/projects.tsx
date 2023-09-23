@@ -11,26 +11,28 @@ import {
   DialogTrigger,
 } from "@/components/ui/dialog";
 import { cn } from "@/lib/utils";
-import { ProjectContainer } from './project-container'
+import { ProjectTransitionContainer } from "./project-transition-container";
 
 export function Project({ project }: { project: Project }) {
   return (
     <Dialog>
-      <DialogTrigger asChild>
-        <ProjectContainer>
-          <div
-            id="project_detail"
-            className="relative flex flex-col px-4 sm:group-odd:order-last"
-          >
-            <ProjectHeader project={project} />
-            <ProjectDesc desc={project.desc} />
-            <ProjectStacks stacks={project.stacks} />
+      <ProjectTransitionContainer className="w-full">
+        <DialogTrigger asChild>
+          <div className="group grid min-h-[30rem] w-full cursor-pointer grid-cols-1 overflow-hidden rounded-xl bg-secondary sm:grid-cols-2">
+            <div
+              id="project_detail"
+              className="relative flex flex-col px-4 sm:group-odd:order-last"
+            >
+              <ProjectHeader project={project} />
+              <ProjectDesc desc={project.desc} />
+              <ProjectStacks stacks={project.stacks} />
+            </div>
+            <div className="relative aspect-square sm:aspect-auto">
+              <ProjectImages project={project} />
+            </div>
           </div>
-          <div className="relative aspect-square sm:aspect-auto">
-            <ProjectImages project={project} />
-          </div>
-        </ProjectContainer>
-      </DialogTrigger>
+        </DialogTrigger>
+      </ProjectTransitionContainer>
       <DialogContent>
         <DialogHeader>
           <DialogTitle className="font-thin">{project.title}</DialogTitle>
