@@ -1,6 +1,5 @@
-import { faker } from "@faker-js/faker";
-
 import { Section } from "../section";
+import Image from 'next/image'
 import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
 import {
   CakeresumeButton,
@@ -41,9 +40,8 @@ export function IntroSection() {
 
 function MyAvatar() {
   return (
-    <Avatar className="h-20 w-20 border border-border">
-      <AvatarImage src={faker.image.avatar()} alt="Kevin portrait" />
-      <AvatarFallback>KC</AvatarFallback>
+    <Avatar className="h-48 w-48 border border-border">
+      <Image src='/portrait.jpg' alt='portrait' fill className="object-cover object-top" />
     </Avatar>
   );
 }
