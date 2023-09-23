@@ -4,6 +4,8 @@ import * as React from "react";
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { wrap } from "popmotion";
+import { Button } from "../ui/button";
+import { ChevronLeft, ChevronRight } from "lucide-react";
 
 const variants = {
   enter: (direction: number) => {
@@ -52,6 +54,10 @@ export function Carousel({ data }: { data: string[] }) {
 
   return (
     <div className="w-full h-full relative flex items-center justify-center overflow-hidden">
+      <Button variant='ghost' size='icon' className="z-50 m-2 sm:m-8" onClick={(e) => paginate(-1)}>
+        <ChevronLeft size={40} />
+      </Button>
+
       <div className="w-full h-full relative flex items-center justify-center p-4 sm:p-8">
         <AnimatePresence initial={false} custom={direction}>
           <motion.img
@@ -82,6 +88,10 @@ export function Carousel({ data }: { data: string[] }) {
           />
         </AnimatePresence>
       </div>
+
+      <Button variant='ghost' size='icon' className="z-50 m-2 sm:m-8" onClick={(e) => paginate(1)}>
+        <ChevronRight size={40} />
+      </Button>
     </div >
   );
 };
