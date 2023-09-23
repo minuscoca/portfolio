@@ -34,7 +34,7 @@ export function Project({ project }: { project: Project }) {
           </div>
         </DialogTrigger>
       </FadeInContainer>
-      <DialogContent>
+      <DialogContent className="w-screen h-screen max-w-[initial] flex flex-col items-center justify-center">
         <DialogHeader>
           <DialogTitle className="font-thin">{project.title}</DialogTitle>
         </DialogHeader>

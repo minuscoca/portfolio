@@ -51,7 +51,7 @@ export function Carousel({ data }: { data: string[] }) {
   };
 
   return (
-    <div className="w-full h-full relative flex items-center justify-center">
+    <div className="w-full h-full relative flex items-center justify-center overflow-hidden">
       <AnimatePresence initial={false} custom={direction}>
         <motion.img
           key={page}
@@ -60,7 +60,8 @@ export function Carousel({ data }: { data: string[] }) {
           variants={variants}
           initial="enter"
           animate="center"
-          exit="exit"
+          // exit="exit"
+          className="rounded-xl"
           transition={{
             x: { type: "spring", stiffness: 300, damping: 30 },
             opacity: { duration: 0.2 }
