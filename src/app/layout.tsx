@@ -22,7 +22,7 @@ export default function RootLayout({
       <body
         className={`${montserrat.className} relative -z-50 transition-colors duration-300 ease-in-out`}
       >
-        <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
+        <ThemeProvider attribute="class" defaultTheme="dark" enableSystem>
           <Navbar />
           <LeftBackgroundDecorator />
           <RightBackgroundDecorator />

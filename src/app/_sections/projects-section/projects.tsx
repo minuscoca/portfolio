@@ -10,9 +10,16 @@ import {
   DialogTitle,
   DialogTrigger,
 } from "@/components/ui/dialog";
-import { cn } from "@/lib/utils";
+import {
+  Tooltip,
+  TooltipContent,
+  TooltipProvider,
+  TooltipTrigger,
+} from "@/components/ui/tooltip";
 import { FadeInContainer } from "@/components/transition/fade-in-container";
 import { Carousel } from "@/components/carousel";
+import { ImagePlus } from "lucide-react";
+import { Button } from "@/components/ui/button";
 
 export function Project({ project }: { project: Project }) {
   return (
@@ -29,7 +36,8 @@ export function Project({ project }: { project: Project }) {
               <ProjectStacks stacks={project.stacks} />
             </div>
             <div className="relative aspect-square sm:aspect-auto">
-              <ProjectImage image={project.images[0]} project={project} />
+              <ProjectImage image={project.images[0]} />
+              <ProjectDetailButton />
             </div>
           </div>
         </DialogTrigger>
@@ -104,4 +112,20 @@ function ProjectImage({
       className="object-cover object-left"
     />
   );
+}
+function ProjectDetailButton() {
+  return (
+    <TooltipProvider delayDuration={100}>
+      <Tooltip>
+        <TooltipTrigger asChild>
+          <Button variant='secondary' size='icon' className="absolute left-0 bottom-0 m-2 p-2 rounded-full w-14 h-14 bg-slate-600 hover:opacity-90 active:opacity-80">
+            <ImagePlus size={32} className="stroke-slate-100" />
+          </Button>
+        </TooltipTrigger>
+        <TooltipContent side="bottom">
+          <p>查看更多圖片</p>
+        </TooltipContent>
+      </Tooltip>
+    </TooltipProvider>
+  )
 }
