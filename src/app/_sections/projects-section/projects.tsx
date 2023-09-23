@@ -9,6 +9,7 @@ import {
   DialogHeader,
   DialogTitle,
   DialogTrigger,
+  DialogDescription,
 } from "@/components/ui/dialog";
 import {
   Tooltip,
@@ -44,7 +45,8 @@ export function Project({ project }: { project: Project }) {
       </FadeInContainer>
       <DialogContent className="w-screen h-screen p-0 max-w-[initial] flex flex-col items-center justify-center">
         <DialogHeader className="p-4">
-          <DialogTitle className="font-thin px-8">{project.title}</DialogTitle>
+          <DialogTitle className="font-thin px-8 text-center">{project.title}</DialogTitle>
+          <DialogDescription className="text-center">{project.subtitle}</DialogDescription>
         </DialogHeader>
         <Carousel data={project.images} />
       </DialogContent>
