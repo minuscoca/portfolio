@@ -61,7 +61,7 @@ export function Carousel({ data }: { data: string[] }) {
           initial="enter"
           animate="center"
           // exit="exit"
-          className="rounded-xl"
+          className="rounded-xl max-h-full"
           transition={{
             x: { type: "spring", stiffness: 300, damping: 30 },
             opacity: { duration: 0.2 }
