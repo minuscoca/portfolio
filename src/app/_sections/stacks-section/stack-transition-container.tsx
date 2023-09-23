@@ -10,7 +10,7 @@ export function StackTransitionContainer({
     <motion.li
       initial={{ opacity: 0, x: 20 }}
       whileInView={{ opacity: 1, x: 0 }}
-      transition={{ type: "spring", duration: 0.5, delay: 0.1 }}
+      transition={{ type: "spring", duration: 1, delay: 0.25 }}
       viewport={{ once: true }}
       className={className}
     >

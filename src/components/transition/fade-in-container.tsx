@@ -2,7 +2,7 @@
 
 import { motion, type MotionProps } from "framer-motion";
 
-export function ProjectTransitionContainer({
+export function FadeInContainer({
   children,
   className,
 }: React.ComponentProps<"div"> & MotionProps) {

@@ -11,12 +11,12 @@ import {
   DialogTrigger,
 } from "@/components/ui/dialog";
 import { cn } from "@/lib/utils";
-import { ProjectTransitionContainer } from "./project-transition-container";
+import { FadeInContainer } from "@/components/transition/fade-in-container";
 
 export function Project({ project }: { project: Project }) {
   return (
     <Dialog>
-      <ProjectTransitionContainer className="w-full">
+      <FadeInContainer className="w-full">
         <DialogTrigger asChild>
           <div className="group grid min-h-[30rem] w-full cursor-pointer grid-cols-1 overflow-hidden rounded-xl bg-secondary sm:grid-cols-2">
             <div
@@ -32,7 +32,7 @@ export function Project({ project }: { project: Project }) {
             </div>
           </div>
         </DialogTrigger>
-      </ProjectTransitionContainer>
+      </FadeInContainer>
       <DialogContent>
         <DialogHeader>
           <DialogTitle className="font-thin">{project.title}</DialogTitle>
