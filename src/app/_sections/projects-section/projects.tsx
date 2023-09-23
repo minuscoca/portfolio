@@ -44,7 +44,7 @@ export function Project({ project }: { project: Project }) {
 
 function ProjectStacks({ stacks }: { stacks: Stack[] }) {
   return (
-    <ul className="flex w-full flex-wrap justify-start p-4">
+    <ul className="flex w-full flex-wrap justify-end p-2">
       {stacks.map((stack) => (
         <Badge
           key={stack.key}
@@ -75,14 +75,14 @@ function ProjectHeader({ project }: { project: Project }) {
         <h1 className="text-3xl font-extrabold">{project.name}</h1>
       </div>
       <AppStoreButton href={project.links?.appStore} />
-      <span className="mt-2 h-[1px] w-full rounded bg-foreground/30" />
+      <span className="m-2 h-[1px] w-full rounded bg-foreground/30" />
     </>
   );
 }
 
 function ProjectDesc({ desc }: { desc: string }) {
   return (
-    <p className="flex-1 whitespace-pre-line p-4 text-start text-sm leading-6">
+    <p className="flex-1 whitespace-pre-line p-2 text-start text-sm leading-6">
       {desc}
     </p>
   );
