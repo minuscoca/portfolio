@@ -1,6 +1,6 @@
 import { Stacks, type Stack } from "./stacks";
 
-type K = "dim_pos" | "dim_rider" | "dim_order" | "dim_admin" | "dim_pay";
+type K = "dim_pos" | "dim_rider" | "dim_order" | "dim_admin" | "dim_pay" | "nicelend";
 
 export type Project = {
   key: keyof typeof Data;
@@ -134,5 +134,23 @@ export const Data: Record<K, Project> = {
       "/project-images/dim-pay/img-11.jpg",
       "/project-images/dim-pay/img-12.jpg",
     ],
+  },
+  nicelend: {
+    key: "nicelend",
+    title: "Nicelend",
+    subtitle: "虛擬貨幣放貸機器人 App",
+    name: "Nicelend",
+    desc: "Nicelend | 透過串接 Bitfinex 的 API，設定利率通知，根據設定的機器人策略進行放貸。我主要負責的是寫出 React Native 的 UI。",
+    stacks: [Stacks["react-native"]],
+    images: [
+      "/project-images/nicelend/img-0.png",
+      "/project-images/nicelend/img-1.png",
+      "/project-images/nicelend/img-2.png",
+      "/project-images/nicelend/img-3.png",
+      "/project-images/nicelend/img-4.png",
+    ],
+    links: {
+      appStore: "https://apps.apple.com/tw/app/id1526431273",
+    }
   },
 };

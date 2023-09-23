@@ -27,7 +27,10 @@ export function Project({ project }: { project: Project }) {
     <Dialog>
       <FadeInContainer className="w-full">
         <DialogTrigger asChild>
-          <div className="group grid min-h-[30rem] w-full cursor-pointer grid-cols-1 overflow-hidden rounded-xl bg-secondary sm:grid-cols-2">
+          <div
+            id={`#project_${[project.key]}`}
+            className="group grid min-h-[30rem] w-full cursor-pointer grid-cols-1 overflow-hidden rounded-xl bg-secondary sm:grid-cols-2"
+          >
             <div
               id="project_detail"
               className="relative flex flex-col px-4 sm:group-odd:order-last"
@@ -111,7 +114,7 @@ function ProjectImage({
       src={image}
       alt='project_sample_image'
       fill
-      className="object-cover object-left group-hover:scale-105 transition-all duration-300 origin-top-left"
+      className="object-cover object-center group-hover:scale-105 transition-all duration-300 origin-top-left"
     />
   );
 }
