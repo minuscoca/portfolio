@@ -29,7 +29,7 @@ export function Project({ project }: { project: Project }) {
               <ProjectStacks stacks={project.stacks} />
             </div>
             <div className="relative aspect-square sm:aspect-auto">
-              <ProjectImages project={project} />
+              <ProjectImage image={project.images[0]} project={project} />
             </div>
           </div>
         </DialogTrigger>
@@ -90,78 +90,18 @@ function ProjectDesc({ desc }: { desc: string }) {
   );
 }
 
-function ProjectImages({ project }: { project: Project }) {
-  return project.images?.map((image, index) => (
-    <ProjectImage
-      key={project.key}
-      image={image}
-      project={project}
-      index={index}
-    />
-  ));
-}
 
 function ProjectImage({
   image,
-  project,
-  index,
 }: {
   image: string;
-  project: Project;
-  index: number;
 }) {
-  const zIndex = 4 - index;
-  if (index > 3) return null;
   return (
     <Image
       src={image}
-      alt={`${project.key}_sample_image`}
+      alt='project_sample_image'
       fill
-      style={{ zIndex }}
-      className={cn(
-        `
-        sm:group-hover:scale-{96}
-        origin-bottom
-        object-cover
-        object-left 
-        opacity-0
-        transition-all 
-        duration-300
-        group-hover:scale-90
-        group-hover:rounded-xl
-        group-hover:opacity-100
-        sm:origin-bottom-right
-        sm:translate-x-4
-        sm:translate-y-8
-        sm:rotate-2
-        sm:scale-95
-        sm:rounded-2xl
-        sm:group-odd:-translate-x-4
-        sm:group-odd:-rotate-2
-        sm:group-even:origin-bottom-left
-        sm:group-hover:translate-x-0
-        sm:group-hover:translate-y-0
-      `,
-        {
-          "opacity-100": index === 0,
-          "sm:group-hover:-rotate-4": index === 0,
-          "sm:group-hover:-rotate-0": index === 1,
-          "sm:group-hover:rotate-4": index === 2,
-          "sm:group-hover:rotate-8": index === 3,
-          "sm:group-odd:group-hover:rotate-4": index === 0,
-          "sm:group-odd:group-hover:rotate-0": index === 1,
-          "sm:group-odd:group-hover:-rotate-4": index === 2,
-          "sm:group-odd:group-hover:-rotate-8": index === 3,
-          "group-hover:translate-y-12 group-hover:-rotate-4": index === 0,
-          "group-hover:translate-y-8 group-hover:rotate-0": index === 1,
-          "group-hover:translate-y-4 group-hover:rotate-4": index === 2,
-          "group-hover:translate-y-0 group-hover:rotate-8": index === 3,
-        },
-      )}
+      className="object-cover object-left"
     />
   );
 }
-
-// sm:-rotate-2
-// sm:group-odd:rotate-2
-// sm:group-hover:rotate-0
