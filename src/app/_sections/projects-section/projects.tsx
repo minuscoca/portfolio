@@ -36,7 +36,7 @@ export function Project({ project }: { project: Project }) {
               <ProjectDesc desc={project.desc} />
               <ProjectStacks stacks={project.stacks} />
             </div>
-            <div className="relative aspect-square sm:aspect-auto">
+            <div className="relative aspect-square sm:aspect-auto overflow-hidden">
               <ProjectImage image={project.images[0]} />
               <ProjectDetailButton />
             </div>
@@ -111,7 +111,7 @@ function ProjectImage({
       src={image}
       alt='project_sample_image'
       fill
-      className="object-cover object-left"
+      className="object-cover object-left group-hover:scale-105 transition-all duration-300 origin-top-left"
     />
   );
 }
