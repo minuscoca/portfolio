@@ -26,25 +26,25 @@ export function Project({ project }: { project: Project }) {
   return (
     <Dialog>
       <FadeInContainer className="w-full">
-        <DialogTrigger asChild>
-          <div
-            id={`#project_${[project.key]}`}
-            className="group grid min-h-[30rem] w-full cursor-pointer grid-cols-1 overflow-hidden rounded-xl bg-secondary sm:grid-cols-2"
-          >
-            <div
-              id="project_detail"
-              className="relative flex flex-col px-4 sm:group-odd:order-last"
-            >
-              <ProjectHeader project={project} />
-              <ProjectDesc desc={project.desc} />
-              <ProjectStacks stacks={project.stacks} />
-            </div>
-            <div className="relative aspect-square sm:aspect-auto overflow-hidden">
+        <div
+          id={`#project_${[project.key]}`}
+          className="grid min-h-[30rem] w-full cursor-pointer grid-cols-1 overflow-hidden rounded-xl bg-secondary sm:grid-cols-2"
+        >
+          <DialogTrigger asChild>
+            <div className="relative group aspect-square sm:aspect-auto overflow-hidden">
               <ProjectImage image={project.images[0]} />
               <ProjectDetailButton />
             </div>
+          </DialogTrigger>
+          <div
+            id="project_detail"
+            className="relative flex flex-col px-4"
+          >
+            <ProjectHeader project={project} />
+            <ProjectDesc desc={project.desc} />
+            <ProjectStacks stacks={project.stacks} />
           </div>
-        </DialogTrigger>
+        </div>
       </FadeInContainer>
       <DialogContent className="w-screen h-screen p-0 max-w-[initial] flex flex-col items-center justify-center">
         <DialogHeader className="p-4">
@@ -59,7 +59,7 @@ export function Project({ project }: { project: Project }) {
 
 function ProjectStacks({ stacks }: { stacks: Stack[] }) {
   return (
-    <ul className="flex w-full flex-wrap justify-end p-2">
+    <ul className="flex w-full flex-wrap justify-start px-2 mb-4">
       {stacks.map((stack) => (
         <Badge
           key={stack.key}

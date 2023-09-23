@@ -1,4 +1,4 @@
-export type Language = "typescript";
+export type Language = "javascript" | "typescript";
 export type Framwork = "react" | "react-native" | "nextjs";
 export type Server = "nodejs" | "express";
 export type UILibrary =
@@ -9,7 +9,8 @@ export type UILibrary =
   | "shadcn-ui"
   | "@tanstack/react-table"
   | "framer-motion"
-  | "react-native-paper";
+  | "react-native-paper"
+  | "react-native-elements";
 export type StateLibrary =
   | "redux"
   | "zustand"
@@ -24,6 +25,11 @@ export type Stack = {
 };
 
 export const Languages: Record<Language, Stack> = {
+  javascript: {
+    key: "javascript",
+    name: "Javascript",
+    icon: "/stack-icons/javascript-icon.png",
+  },
   typescript: {
     key: "typescript",
     name: "Typescript",
@@ -63,17 +69,17 @@ export const UILibraries: Record<UILibrary, Stack> = {
   },
   "@mui/material": {
     key: "@mui/material",
-    name: "Material Ui",
+    name: "Material UI",
     icon: "/stack-icons/material-ui.svg",
   },
   "@radix-ui": {
     key: "@radix-ui",
-    name: "Radix Ui",
+    name: "Radix UI",
     icon: "/stack-icons/radix-ui.png",
   },
   "shadcn-ui": {
     key: "shadcn-ui",
-    name: "Shadcn Ui",
+    name: "Shadcn UI",
     icon: "/stack-icons/shadcn-ui.svg",
   },
   "@tanstack/react-table": {
@@ -91,6 +97,11 @@ export const UILibraries: Record<UILibrary, Stack> = {
     name: "React Native Paper",
     icon: "/stack-icons/react-native-paper.svg",
   },
+  "react-native-elements": {
+    key: "react-native-elements",
+    name: "React Native Elements",
+    icon: "/stack-icons/react-native-elements.png"
+  }
 };
 
 export const StateManagements: Record<StateLibrary, Stack> = {
