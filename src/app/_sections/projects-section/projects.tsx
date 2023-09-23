@@ -2,7 +2,7 @@ import { type Project } from "@/_data/projects";
 import { type Stack } from "@/_data/stacks";
 import { Badge } from "@/components/ui/badge";
 import { AppStoreButton } from "./app-store-button";
-import Image, { ImageProps } from "next/image";
+import Image from "next/image";
 import {
   Dialog,
   DialogContent,
@@ -11,12 +11,13 @@ import {
   DialogTrigger,
 } from "@/components/ui/dialog";
 import { cn } from "@/lib/utils";
+import { ProjectContainer } from './project-container'
 
 export function Project({ project }: { project: Project }) {
   return (
     <Dialog>
       <DialogTrigger asChild>
-        <div className="group grid min-h-[30rem] w-full cursor-pointer grid-cols-1 overflow-hidden rounded-xl bg-secondary sm:grid-cols-2">
+        <ProjectContainer>
           <div
             id="project_detail"
             className="relative flex flex-col px-4 sm:group-odd:order-last"
@@ -28,7 +29,7 @@ export function Project({ project }: { project: Project }) {
           <div className="relative aspect-square sm:aspect-auto">
             <ProjectImages project={project} />
           </div>
-        </div>
+        </ProjectContainer>
       </DialogTrigger>
       <DialogContent>
         <DialogHeader>
