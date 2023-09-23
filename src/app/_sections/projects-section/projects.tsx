@@ -34,9 +34,9 @@ export function Project({ project }: { project: Project }) {
           </div>
         </DialogTrigger>
       </FadeInContainer>
-      <DialogContent className="w-screen h-screen max-w-[initial] flex flex-col items-center justify-center">
-        <DialogHeader>
-          <DialogTitle className="font-thin">{project.title}</DialogTitle>
+      <DialogContent className="w-screen h-screen p-0 max-w-[initial] flex flex-col items-center justify-center">
+        <DialogHeader className="p-4">
+          <DialogTitle className="font-thin px-8">{project.title}</DialogTitle>
         </DialogHeader>
         <Carousel data={project.images} />
       </DialogContent>
