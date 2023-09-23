@@ -1,6 +1,6 @@
 import { Stacks, type Stack } from "./stacks";
 
-type K = "dim_pos" | "dim_rider" | "dim_order" | "dim_admin" | "dim_pay" | "nicelend";
+type K = "dim_pos" | "dim_order" | "dim_rider" | "dim_admin" | "dim_pay" | "nicelend";
 
 export type Project = {
   key: keyof typeof Data;

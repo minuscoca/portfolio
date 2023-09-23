@@ -18,7 +18,7 @@ export function ExperienceSection() {
 
 function Timeline({ data }: { data: Timeline[] }) {
   return (
-    <ul className="flex w-full flex-col gap-4">
+    <ul className="flex w-full gap-4 flex-col-reverse">
       {data.map((timeline, index) => (
         <TimelineItem
           key={timeline.key}
@@ -44,8 +44,8 @@ function TimelineItem({
         <TimelineDuration data={data} />
       </div>
       <div className="flex flex-col items-center gap-4">
-        <IconComponent className="h-10 w-10 flex-shrink-0 rounded-full border border-foreground p-2" />
         <TimelineDivider hasNextItem={hasNextItem} />
+        <IconComponent className="h-10 w-10 flex-shrink-0 rounded-full border border-foreground p-2" />
       </div>
       <div className="flex flex-1 flex-col gap-2 rounded-xl bg-secondary py-4">
         <h1 className="px-6 text-lg">{data.label}</h1>
