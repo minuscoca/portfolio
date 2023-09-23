@@ -12,6 +12,7 @@ import {
 } from "@/components/ui/dialog";
 import { cn } from "@/lib/utils";
 import { FadeInContainer } from "@/components/transition/fade-in-container";
+import { Carousel } from "@/components/carousel";
 
 export function Project({ project }: { project: Project }) {
   return (
@@ -37,6 +38,7 @@ export function Project({ project }: { project: Project }) {
         <DialogHeader>
           <DialogTitle className="font-thin">{project.title}</DialogTitle>
         </DialogHeader>
+        <Carousel data={project.images} />
       </DialogContent>
     </Dialog>
   );

@@ -8,7 +8,7 @@ export type Project = {
   name: string;
   desc: string;
   stacks: Stack[];
-  images?: string[];
+  images: string[];
   links?: {
     appStore?: string;
   };
