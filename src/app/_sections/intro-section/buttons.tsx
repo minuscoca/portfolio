@@ -5,6 +5,7 @@ import {
   ArrowRight,
   Download,
   Gitlab,
+  Github,
   Linkedin,
   CakeSlice,
 } from "lucide-react";
@@ -76,7 +77,7 @@ export function VisitProjectButton() {
       className="w-8 h-8"
       tooltipSide="right"
     >
-      <Gitlab className="stroke-orange-500 dark:stroke-orange-400" size={18} />
+      <Github className="stroke-orange-500 dark:stroke-orange-400" size={18} />
     </IconButton>
   );
 }
