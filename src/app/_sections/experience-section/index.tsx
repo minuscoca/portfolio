@@ -1,10 +1,8 @@
-import { Section } from "./section";
+import { Section } from "../section";
 import { cn } from "@/lib/utils";
 import { Data, type Timeline } from "@/_data/timeline";
 import { FadeInContainer } from "@/components/transition/fade-in-container";
-import { type Project } from "@/_data/projects";
-import Link from "next/link";
-import { FolderDot } from "lucide-react";
+import { TimelineProjects } from "./timeline-projects";
 
 export function ExperienceSection() {
   return (
@@ -56,27 +54,9 @@ function TimelineItem({
         <p className="whitespace-pre-line px-6 py-2 text-secondary-foreground">
           {data.desc}
         </p>
-        <Projects data={data.projects} />
+        <TimelineProjects data={data.projects} />
       </div>
     </div>
-  );
-}
-
-function Projects({ data }: { data: Project[] }) {
-  if (data.length === 0) return null;
-  return (
-    <ul className="flex flex-col gap-2 border-t-1 border-background px-6 pt-4">
-      {data.map((project) => (
-        <Link
-          key={project.key}
-          replace
-          href={`/#project_${project.key}`}
-          className="flex items-center gap-3 text-cyan-600 underline-offset-4 hover:underline dark:text-cyan-400"
-        >
-          <FolderDot size={20} /> {project.name}
-        </Link>
-      ))}
-    </ul>
   );
 }
 
