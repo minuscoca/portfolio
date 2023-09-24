@@ -11,10 +11,7 @@ export type UILibrary =
   | "framer-motion"
   | "react-native-paper"
   | "react-native-elements";
-export type StateLibrary =
-  | "redux"
-  | "zustand"
-  | "@tanstack/react-query";
+export type StateLibrary = "redux" | "zustand" | "@tanstack/react-query";
 
 export type Stack = {
   key: keyof typeof Stacks;
@@ -84,7 +81,7 @@ export const UILibraries: Record<UILibrary, Stack> = {
   "@tanstack/react-table": {
     key: "@tanstack/react-table",
     name: "React Table",
-    icon: '/stack-icons/react-table.png',
+    icon: "/stack-icons/react-table.png",
   },
   "framer-motion": {
     key: "framer-motion",
@@ -113,7 +110,7 @@ export const StateManagements: Record<StateLibrary, Stack> = {
   "@tanstack/react-query": {
     key: "@tanstack/react-query",
     name: "React Query",
-    icon: '/stack-icons/react-query.png',
+    icon: "/stack-icons/react-query.png",
   },
 };
 

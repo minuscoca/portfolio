@@ -17,7 +17,7 @@ import {
   TooltipTrigger,
 } from "@/components/ui/tooltip";
 import { cn } from "@/lib/utils";
-import { type Side } from '@radix-ui/react-popper'
+import { type Side } from "@radix-ui/react-popper";
 
 export function ContactButton() {
   const router = useRouter();
@@ -54,7 +54,7 @@ export function CakeresumeButton() {
   return (
     <IconButton
       tooltip="Cakeresume"
-      onClick={() => openUrl('https://www.cakeresume.com/me/minuscoca')}
+      onClick={() => openUrl("https://www.cakeresume.com/me/minuscoca")}
     >
       <CakeSlice className="stroke-emerald-500 dark:stroke-emerald-400" />
     </IconButton>
@@ -63,7 +63,10 @@ export function CakeresumeButton() {
 
 export function GitlabButton() {
   return (
-    <IconButton tooltip="Gitlab" onClick={() => openUrl('https://gitlab.com/Minacoca')}>
+    <IconButton
+      tooltip="Gitlab"
+      onClick={() => openUrl("https://gitlab.com/Minacoca")}
+    >
       <Gitlab className="stroke-orange-500 dark:stroke-orange-400" />
     </IconButton>
   );
@@ -73,8 +76,8 @@ export function VisitProjectButton() {
   return (
     <IconButton
       tooltip="Visit repository"
-      onClick={() => openUrl('https://github.com/minuscoca/portfolio')}
-      className="w-8 h-8"
+      onClick={() => openUrl("https://github.com/minuscoca/portfolio")}
+      className="h-8 w-8"
       tooltipSide="right"
     >
       <Github className="stroke-orange-500 dark:stroke-orange-400" size={18} />
@@ -83,8 +86,8 @@ export function VisitProjectButton() {
 }
 
 function openUrl(url?: string) {
-  if (typeof url === 'string') {
-    window.open(url, '_blank')
+  if (typeof url === "string") {
+    window.open(url, "_blank");
   }
 }
 
@@ -110,7 +113,7 @@ function IconButton({
   ...props
 }: {
   tooltip: string;
-  tooltipSide?: Side
+  tooltipSide?: Side;
 } & ButtonProps) {
   return (
     <TooltipProvider delayDuration={100}>
@@ -128,7 +131,7 @@ function IconButton({
             {children}
           </Button>
         </TooltipTrigger>
-        <TooltipContent side={tooltipSide || 'bottom'}>
+        <TooltipContent side={tooltipSide || "bottom"}>
           <p>{tooltip}</p>
         </TooltipContent>
       </Tooltip>

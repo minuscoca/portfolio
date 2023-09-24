@@ -1,4 +1,4 @@
-"use client"
+"use client";
 import Image from "next/image";
 import { Avatar } from "@/components/ui/avatar";
 import { motion } from "framer-motion";
@@ -9,12 +9,14 @@ export function IntroSection() {
     <Section id="home">
       <PortraitAvatar />
       <motion.h1
-        className="text-lg whitespace-pre-line"
+        className="whitespace-pre-line text-lg"
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
       >
-        Hi！<b>我是 Kevin Wang</b>，一名<b>前端工程師</b><br />
-        擅長使用 <i>React</i>、<i>React Native</i> 和 <i>Next.js</i> 這些技術來開發 <b>網頁和手機應用程式</b>
+        Hi！<b>我是 Kevin Wang</b>，一名<b>前端工程師</b>
+        <br />
+        擅長使用 <i>React</i>、<i>React Native</i> 和 <i>Next.js</i>{" "}
+        這些技術來開發 <b>網頁和手機應用程式</b>
       </motion.h1>
 
       <motion.h1
@@ -22,9 +24,7 @@ export function IntroSection() {
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.25 }}
-      >
-
-      </motion.h1>
+      ></motion.h1>
       <SectionDivider />
     </Section>
   );

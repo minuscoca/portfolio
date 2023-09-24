@@ -23,12 +23,12 @@ import { Button } from "@/components/ui/button";
 
 export function Project({ project }: { project: Project }) {
   return (
-    <div id={`project_${project.key}`} className="scroll-mt-24">
+    <div id={`project_${project.key}`} className="w-full scroll-mt-24">
       <Dialog>
         <FadeInContainer className="w-full">
           <div className="grid min-h-[30rem] w-full grid-cols-1 overflow-hidden rounded-xl bg-secondary sm:grid-cols-2">
             <DialogTrigger asChild>
-              <div className="group relative aspect-square overflow-hidden sm:aspect-auto cursor-pointer">
+              <div className="group relative aspect-square cursor-pointer overflow-hidden sm:aspect-auto">
                 <ProjectImage image={project.images[0]} />
                 <ProjectDetailButton />
               </div>
@@ -58,11 +58,11 @@ export function Project({ project }: { project: Project }) {
 
 function ProjectStacks({ stacks }: { stacks: Stack[] }) {
   return (
-    <ul className="mb-4 flex w-full flex-wrap justify-start px-2">
+    <ul className="m-4 flex w-full flex-wrap justify-start">
       {stacks.map((stack) => (
         <span
           key={stack.key}
-          className="mx-2 my-1 min-w-[5rem] rounded-full bg-slate-700 px-4 py-1 active:opacity-25 dark:bg-slate-100 text-secondary text-xs shadow-sm"
+          className="mx-2 my-1 min-w-[5rem] rounded-full bg-slate-700 px-3 py-1 text-xs text-secondary shadow-sm active:opacity-25 dark:bg-slate-100"
         >
           <span className="w-full">{stack.name}</span>
         </span>

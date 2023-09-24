@@ -33,5 +33,5 @@ export function Section({
 export function SectionDivider() {
   return (
     <span className="m-8 h-16 w-1 justify-self-center rounded-full bg-border" />
-  )
+  );
 }
