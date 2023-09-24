@@ -73,7 +73,7 @@ export function VisitProjectButton() {
   return (
     <IconButton
       tooltip="Visit repository"
-      onClick={() => openUrl('https://gitlab.com/Minacoca/portfolio')}
+      onClick={() => openUrl('https://github.com/minuscoca/portfolio')}
       className="w-8 h-8"
       tooltipSide="right"
     >
