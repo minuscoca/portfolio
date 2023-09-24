@@ -13,8 +13,8 @@ export function IntroSection() {
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
       >
-        <b>Hi，我是王楷筌</b>，也可以叫我 Kevin。 我是一名<b>前端工程師</b>。<br />
-        我擅長使用 <i>React</i>、<i>React Native</i> 和 <i>Next.js</i> 這些技術來開發 <b>網頁和手機應用程式</b>。
+        Hi！<b>我是 Kevin Wang</b>，一名<b>前端工程師</b><br />
+        擅長使用 <i>React</i>、<i>React Native</i> 和 <i>Next.js</i> 這些技術來開發 <b>網頁和手機應用程式</b>
       </motion.h1>
 
       <motion.h1
