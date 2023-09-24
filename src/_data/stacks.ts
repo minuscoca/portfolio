@@ -100,8 +100,8 @@ export const UILibraries: Record<UILibrary, Stack> = {
   "react-native-elements": {
     key: "react-native-elements",
     name: "React Native Elements",
-    icon: "/stack-icons/react-native-elements.png"
-  }
+    icon: "/stack-icons/react-native-elements.png",
+  },
 };
 
 export const StateManagements: Record<StateLibrary, Stack> = {

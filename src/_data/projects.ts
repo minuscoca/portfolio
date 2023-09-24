@@ -1,6 +1,12 @@
 import { Stacks, type Stack } from "./stacks";
 
-type K = "dim_pos" | "dim_order" | "dim_rider" | "dim_admin" | "dim_pay" | "nicelend";
+type K =
+  | "dim_pos"
+  | "dim_order"
+  | "dim_rider"
+  | "dim_admin"
+  | "dim_pay"
+  | "nicelend";
 
 export type Project = {
   key: keyof typeof Data;
@@ -19,7 +25,7 @@ export const Data: Record<K, Project> = {
   dim_pos: {
     key: "dim_pos",
     title: "DimPOS",
-    subtitle: '餐廳 POS App',
+    subtitle: "餐廳 POS App",
     name: "DimPOS",
     desc: `DimPOS | 餐廳 POS App\n
     專案簡介：包含餐廳營業設定、菜單設定、店內點餐系統、外帶與外送接單系統、現金結帳與多種付款方式。\n
@@ -55,7 +61,12 @@ export const Data: Record<K, Project> = {
     專案簡介：提供堂食、外帶、外送等多種餐廳服務，另提供平台積分兌換與客戶關係管理等多樣功能。\n
     工作內容：根據需求使用 React 與 Material UI 開發使用介面，使用 React Query 串接 API，使用 Redux 與 Context API 處理 App 狀態。使用 React Window 處理長列表並配合 React Query 的 InfiniteQuery 功能實做無限捲動功能。
     `,
-    stacks: [Stacks.react, Stacks.redux, Stacks["@tanstack/react-query"], Stacks["@mui/material"]],
+    stacks: [
+      Stacks.react,
+      Stacks.redux,
+      Stacks["@tanstack/react-query"],
+      Stacks["@mui/material"],
+    ],
     images: [
       "/project-images/dim-order/img-0.png",
       "/project-images/dim-order/img-1.jpg",
@@ -85,7 +96,13 @@ export const Data: Record<K, Project> = {
     專案簡介：可查看目前的外送訂單狀態並承接外送訂單。於訂定畫面中，可一目暸然目前外送訂單的取餐時間、預計送達時間、訂單數量等。在設定畫面中，也可查詢個人的接單數據統計，方便查詢自己的歷史接單紀錄。\n
     工作內容：根據需求設計 UI，使用 React Native 與 React Native Elements 開發 App。使用 Node.js/Express 與 Firebase 開發伺服器，串接第三方外送平台 API，並透過 Webhook 即時更新訂單狀態。
     `,
-    stacks: [Stacks["react-native"], Stacks.redux, Stacks["react-native-elements"], Stacks.nodejs, Stacks.express],
+    stacks: [
+      Stacks["react-native"],
+      Stacks.redux,
+      Stacks["react-native-elements"],
+      Stacks.nodejs,
+      Stacks.express,
+    ],
     images: [
       "/project-images/dim-rider/img-0.png",
       "/project-images/dim-rider/img-1.jpg",
@@ -111,7 +128,12 @@ export const Data: Record<K, Project> = {
     專案簡介：提供點單員工進行餐廳設定與管理、設定優惠、訂單查詢、安排訂單運送、處裡訂單退款等完整後台管理功能。\n
     工作內容：根據需求設計部分 UI，使用 React 與 Material UI 開發網頁並串接 API。使用 React Table 實做多種表格。
     `,
-    stacks: [Stacks.react, Stacks.redux, Stacks["@mui/material"], Stacks["@tanstack/react-table"]],
+    stacks: [
+      Stacks.react,
+      Stacks.redux,
+      Stacks["@mui/material"],
+      Stacks["@tanstack/react-table"],
+    ],
     images: [
       "/project-images/dim-admin/img-0.png",
       "/project-images/dim-admin/img-1.png",
@@ -133,7 +155,11 @@ export const Data: Record<K, Project> = {
     專案簡介：提供 DimPos 網路障礙時，仍須查看 DimPay 付款記錄時的備案。當餐廳網路中斷時可使用行動網路查看此 App，以確認訂單是否已收到付款。可根據不同的付款方式與時間區間進行篩選，或依據關鍵字做搜尋。\n
     工作內容：根據需求設計 UI，使用 React Native 開發 App。使用 Section List 實做資料更新與無限捲動功能，使用 React Native Calendars 實做日期區間選擇。
     `,
-    stacks: [Stacks["react-native"], Stacks["react-native-paper"], Stacks.typescript],
+    stacks: [
+      Stacks["react-native"],
+      Stacks["react-native-paper"],
+      Stacks.typescript,
+    ],
     images: [
       "/project-images/dim-pay/img-0.png",
       "/project-images/dim-pay/img-1.jpg",
@@ -169,6 +195,6 @@ export const Data: Record<K, Project> = {
     ],
     links: {
       appStore: "https://apps.apple.com/tw/app/id1526431273",
-    }
+    },
   },
 };

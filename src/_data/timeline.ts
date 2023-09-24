@@ -49,6 +49,12 @@ export const Data: Timeline[] = [
     `,
     start: "2020/9",
     end: "至今",
-    projects: [Projects.dim_pos, Projects.dim_order, Projects.dim_rider, Projects.dim_admin, Projects.dim_pay],
+    projects: [
+      Projects.dim_pos,
+      Projects.dim_order,
+      Projects.dim_rider,
+      Projects.dim_admin,
+      Projects.dim_pay,
+    ],
   },
 ];

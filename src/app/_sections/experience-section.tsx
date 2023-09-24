@@ -24,7 +24,7 @@ export function ExperienceSection() {
 
 function Timeline({ data }: { data: Timeline[] }) {
   return (
-    <ul className="flex w-full gap-4 flex-col-reverse">
+    <ul className="flex w-full flex-col-reverse gap-4">
       {data.map((timeline, index) => (
         <TimelineItem
           key={timeline.key}
@@ -46,8 +46,7 @@ function TimelineItem({
   const IconComponent = data.icon;
   return (
     <div className="group flex gap-4 text-start sm:even:flex-row-reverse">
-      <div className="hidden py-2 text-right group-even:text-left sm:block sm:flex-1">
-      </div>
+      <div className="hidden py-2 text-right group-even:text-left sm:block sm:flex-1"></div>
       <div className="flex flex-col items-center gap-4">
         <TimelineDivider hasNextItem={hasNextItem} />
         <IconComponent className="h-10 w-10 flex-shrink-0 rounded-full border border-foreground p-2" />
@@ -55,7 +54,9 @@ function TimelineItem({
       <div className="flex flex-1 flex-col gap-2 rounded-xl bg-secondary py-4">
         <h1 className="px-6 text-xl">{data.title}</h1>
         <TimelineDuration data={data} />
-        <p className="py-2 px-6 text-secondary-foreground whitespace-pre-line">{data.desc}</p>
+        <p className="whitespace-pre-line px-6 py-2 text-secondary-foreground">
+          {data.desc}
+        </p>
         <Projects data={data.projects} />
       </div>
     </div>
@@ -63,26 +64,29 @@ function TimelineItem({
 }
 
 function Projects({ data }: { data: Project[] }) {
-  if (data.length === 0) return null
+  if (data.length === 0) return null;
   return (
-    <ul className="flex flex-col gap-2 px-6 pt-4 border-t-1 border-background">
-      {data.map(project => (
+    <ul className="flex flex-col gap-2 border-t-1 border-background px-6 pt-4">
+      {data.map((project) => (
         <Link
           key={project.key}
           replace
           href={`/#project_${project.key}`}
-          className="flex items-center gap-3 text-cyan-600 dark:text-cyan-400 hover:underline underline-offset-4"
+          className="flex items-center gap-3 text-cyan-600 underline-offset-4 hover:underline dark:text-cyan-400"
         >
           <FolderDot size={20} /> {project.name}
         </Link>
       ))}
     </ul>
-  )
+  );
 }
 
-function TimelineDuration({ data, className }: { data: Timeline } & React.ComponentProps<"span">) {
+function TimelineDuration({
+  data,
+  className,
+}: { data: Timeline } & React.ComponentProps<"span">) {
   return (
-    <span className={cn("text-muted-foreground px-6", className)}>
+    <span className={cn("px-6 text-muted-foreground", className)}>
       {data.start}
       {data.start && " - "}
       {data.end}

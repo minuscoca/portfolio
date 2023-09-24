@@ -1,4 +1,4 @@
-"use client"
+"use client";
 
 import * as React from "react";
 import { useState } from "react";
@@ -11,21 +11,21 @@ const variants = {
   enter: (direction: number) => {
     return {
       x: direction > 0 ? 1000 : -1000,
-      opacity: 0
+      opacity: 0,
     };
   },
   center: {
     zIndex: 1,
     x: 0,
-    opacity: 1
+    opacity: 1,
   },
   exit: (direction: number) => {
     return {
       zIndex: 0,
       x: direction < 0 ? 1000 : -1000,
-      opacity: 0
+      opacity: 0,
     };
-  }
+  },
 };
 
 /**
@@ -53,12 +53,17 @@ export function Carousel({ data }: { data: string[] }) {
   };
 
   return (
-    <div className="w-full h-full relative flex items-center justify-center overflow-hidden">
-      <Button variant='ghost' size='icon' className="z-50 m-2 sm:m-8" onClick={(e) => paginate(-1)}>
+    <div className="relative flex h-full w-full items-center justify-center overflow-hidden">
+      <Button
+        variant="ghost"
+        size="icon"
+        className="z-50 m-2 sm:m-8"
+        onClick={(e) => paginate(-1)}
+      >
         <ChevronLeft size={40} />
       </Button>
 
-      <div className="w-full h-full relative flex items-center justify-center p-4 sm:p-8">
+      <div className="relative flex h-full w-full items-center justify-center p-4 sm:p-8">
         <AnimatePresence initial={false} custom={direction}>
           <motion.img
             key={page}
@@ -68,10 +73,10 @@ export function Carousel({ data }: { data: string[] }) {
             initial="enter"
             animate="center"
             // exit="exit"
-            className="rounded-xl max-h-full max-w-full"
+            className="max-h-full max-w-full rounded-xl"
             transition={{
               x: { type: "spring", stiffness: 300, damping: 30 },
-              opacity: { duration: 0.2 }
+              opacity: { duration: 0.2 },
             }}
             drag="x"
             dragConstraints={{ left: 0, right: 0 }}
@@ -89,9 +94,14 @@ export function Carousel({ data }: { data: string[] }) {
         </AnimatePresence>
       </div>
 
-      <Button variant='ghost' size='icon' className="z-50 m-2 sm:m-8" onClick={(e) => paginate(1)}>
+      <Button
+        variant="ghost"
+        size="icon"
+        className="z-50 m-2 sm:m-8"
+        onClick={(e) => paginate(1)}
+      >
         <ChevronRight size={40} />
       </Button>
-    </div >
+    </div>
   );
-};
+}

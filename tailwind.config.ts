@@ -57,7 +57,7 @@ module.exports = {
         "10": "10deg",
       },
       borderWidth: {
-        "1": "1px"
+        "1": "1px",
       },
       borderRadius: {
         lg: "var(--radius)",

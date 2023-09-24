@@ -1,5 +1,5 @@
 import { Section } from "../section";
-import Image from 'next/image'
+import Image from "next/image";
 import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
 import {
   CakeresumeButton,
@@ -41,7 +41,12 @@ export function IntroSection() {
 function MyAvatar() {
   return (
     <Avatar className="h-48 w-48 border border-border">
-      <Image src='/portrait.jpg' alt='portrait' fill className="object-cover object-top" />
+      <Image
+        src="/portrait.jpg"
+        alt="portrait"
+        fill
+        className="object-cover object-top"
+      />
     </Avatar>
   );
 }
