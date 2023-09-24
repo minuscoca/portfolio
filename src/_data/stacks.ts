@@ -14,7 +14,6 @@ export type UILibrary =
 export type StateLibrary =
   | "redux"
   | "zustand"
-  | "jotai"
   | "@tanstack/react-query";
 
 export type Stack = {
@@ -111,7 +110,6 @@ export const StateManagements: Record<StateLibrary, Stack> = {
     icon: "/stack-icons/redux-original.svg",
   },
   zustand: { key: "zustand", name: "Zustand", icon: null, emoji: "🐻" },
-  jotai: { key: "jotai", name: "Jotai", icon: null, emoji: "👻" },
   "@tanstack/react-query": {
     key: "@tanstack/react-query",
     name: "React Query",
