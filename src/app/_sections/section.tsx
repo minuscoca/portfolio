@@ -26,9 +26,12 @@ export function Section({
         <h1 className="my-4 text-3xl">{title}</h1>
         {children}
       </section>
-      {divider && (
-        <span className="m-8 h-16 w-1 justify-self-center rounded-full bg-border" />
-      )}
     </>
   );
+}
+
+export function SectionDivider() {
+  return (
+    <span className="m-8 h-16 w-1 justify-self-center rounded-full bg-border" />
+  )
 }

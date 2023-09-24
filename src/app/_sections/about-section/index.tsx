@@ -1,10 +1,10 @@
-import { Section } from "../section";
+import { Section, SectionDivider } from "../section";
 import { FadeInContainer } from "@/components/transition/fade-in-container";
 
 export function AboutSection() {
   return (
     <FadeInContainer>
-      <Section id="about" title="About" divider>
+      <Section id="about" title="About">
         <p>
           目前，我擁有近 4
           年的前端開發工作經驗，並且擔任著資深前端工程師的職位，這段時間我一直在一家名為點單
@@ -24,6 +24,7 @@ export function AboutSection() {
           目前，我正在積極尋找一個全職的軟體開發職位，因為我對不斷學習和挑戰自己充滿熱情。
           我期待著能夠為一家優秀的軟體開發團隊做出貢獻。
         </p>
+        <SectionDivider />
       </Section>
     </FadeInContainer>
   );

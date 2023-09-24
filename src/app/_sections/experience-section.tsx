@@ -12,7 +12,6 @@ export function ExperienceSection() {
       <Section
         id="experience"
         title="Experience"
-        divider
         fullwidth
         className="max-w-5xl"
       >
