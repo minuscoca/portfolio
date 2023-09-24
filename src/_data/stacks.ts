@@ -85,7 +85,7 @@ export const UILibraries: Record<UILibrary, Stack> = {
   "@tanstack/react-table": {
     key: "@tanstack/react-table",
     name: "React Table",
-    icon: null,
+    icon: '/stack-icons/react-table.png',
   },
   "framer-motion": {
     key: "framer-motion",
@@ -115,7 +115,7 @@ export const StateManagements: Record<StateLibrary, Stack> = {
   "@tanstack/react-query": {
     key: "@tanstack/react-query",
     name: "React Query",
-    icon: null,
+    icon: '/stack-icons/react-query.png',
   },
 };
 
