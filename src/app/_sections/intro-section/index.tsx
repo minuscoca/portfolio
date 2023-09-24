@@ -1,13 +1,6 @@
 import { Section } from "../section";
 import Image from "next/image";
-import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
-import {
-  CakeresumeButton,
-  ContactButton,
-  CVDownloadButton,
-  GitlabButton,
-  LinkedinButton,
-} from "./buttons";
+import { Avatar } from "@/components/ui/avatar";
 
 export function IntroSection() {
   return (
@@ -22,18 +15,6 @@ export function IntroSection() {
         我熱愛編程，並且致力於不斷學習和提升自己的技術能力，以創造出更好的用戶體驗和功能豐富的應用程式。
         我期待能夠與您一同合作，共同打造出優秀的網頁或應用程式。
       </p>
-
-      <div className="grid gap-4">
-        <div className="grid gap-4 sm:grid-cols-2">
-          <ContactButton />
-          <CVDownloadButton />
-        </div>
-        <div className="z flex justify-center gap-4">
-          <LinkedinButton />
-          <CakeresumeButton />
-          <GitlabButton />
-        </div>
-      </div>
     </Section>
   );
 }

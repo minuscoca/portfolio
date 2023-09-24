@@ -3,7 +3,6 @@ import { AboutSection } from "./_sections/about-section";
 import { StacksSection } from "./_sections/stacks-section";
 import { ProjectsSection } from "./_sections/projects-section";
 import { ExperienceSection } from "./_sections/experience-section";
-import { ContectSection } from "./_sections/contact-section";
 
 export default function Home() {
   return (
@@ -13,7 +12,6 @@ export default function Home() {
       <ProjectsSection />
       <StacksSection />
       <ExperienceSection />
-      <ContectSection />
     </main>
   );
 }

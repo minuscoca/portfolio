@@ -52,7 +52,7 @@ export function CakeresumeButton() {
   return (
     <IconButton
       tooltip="Cakeresume"
-      onClick={() => console.log("got to Cakeresume")}
+      onClick={() => openUrl('https://www.cakeresume.com/me/minuscoca')}
     >
       <CakeSlice className="stroke-emerald-500 dark:stroke-emerald-400" />
     </IconButton>
@@ -61,10 +61,14 @@ export function CakeresumeButton() {
 
 export function GitlabButton() {
   return (
-    <IconButton tooltip="Gitlab" onClick={() => console.log("got to Gitlab")}>
+    <IconButton tooltip="Gitlab" onClick={() => openUrl('https://gitlab.com/Minacoca')}>
       <Gitlab className="stroke-orange-500 dark:stroke-orange-400" />
     </IconButton>
   );
+}
+
+function openUrl(url: string) {
+  window.open(url, '_blank')
 }
 
 function PillButton({ children, className, ...props }: ButtonProps) {
