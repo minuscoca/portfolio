@@ -31,7 +31,7 @@ export const Data: Record<K, Project> = {
     專案簡介：
     點單提供給餐廳端的 POS 系統，能接收 DimOrder 下的外帶、外送、內用訂單，並能控制收銀機、連接熱感打印機、標籤機，以便餐廳列印出入座 QRCode、廚房單、收據等，也支援刷卡機、八達通等支付設備，除了雲端功能外也提供離線模式，讓餐廳在網路中斷時也能繼續營業\n
     工作內容：
-    負責將舊版的 Angular 餐廳端 POS 系統，根據設計師提供的 Zeplin 設計圖使用 React Native 開發新版 App
+    負責將舊版的 Angular 餐廳端 POS 系統，根據設計師提供的 Zeplin 設計圖使用 React Native 開發新版 App，使用 Redux 處理 App 狀態
     `,
     stacks: [Stacks["react-native"], Stacks.redux],
     images: [
