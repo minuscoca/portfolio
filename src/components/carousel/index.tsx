@@ -92,6 +92,10 @@ export function Carousel({ data }: { data: string[] }) {
             }}
           />
         </AnimatePresence>
+        {
+          // load all images at once
+          data.map(url => <img key={url} src={url} alt={url} className="hidden" />)
+        }
       </div>
 
       <Button
