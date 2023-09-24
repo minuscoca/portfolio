@@ -33,7 +33,7 @@ export const Data: Timeline[] = [
     key: "2",
     title: "任職於刻一有限公司",
     icon: Briefcase,
-    desc: `刻一是一間接案公司，我的職位為前端工程師。工作內容為根據業主的需求完成網頁或 App 的 UI。\n
+    desc: `刻一是一間接案公司，我的職位為前端工程師，工作內容為根據業主的需求完成網頁或 App。\n
     期間有用 React 寫過一些網頁，例如積分兌換活動等。另外也是在這時候接觸到 React Native，並協助完成了一個虛擬貨幣借貸機器人 App Nicelend。`,
     start: "2020/01",
     end: "2020/12",
