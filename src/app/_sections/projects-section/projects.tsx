@@ -1,6 +1,5 @@
 import { type Project } from "@/_data/projects";
 import { type Stack } from "@/_data/stacks";
-import { Badge } from "@/components/ui/badge";
 import { AppStoreButton } from "./app-store-button";
 import Image from "next/image";
 import {
@@ -27,9 +26,9 @@ export function Project({ project }: { project: Project }) {
     <div id={`project_${project.key}`} className="scroll-mt-24">
       <Dialog>
         <FadeInContainer className="w-full">
-          <div className="grid min-h-[30rem] w-full cursor-pointer grid-cols-1 overflow-hidden rounded-xl bg-secondary sm:grid-cols-2">
+          <div className="grid min-h-[30rem] w-full grid-cols-1 overflow-hidden rounded-xl bg-secondary sm:grid-cols-2">
             <DialogTrigger asChild>
-              <div className="group relative aspect-square overflow-hidden sm:aspect-auto">
+              <div className="group relative aspect-square overflow-hidden sm:aspect-auto cursor-pointer">
                 <ProjectImage image={project.images[0]} />
                 <ProjectDetailButton />
               </div>
@@ -61,12 +60,12 @@ function ProjectStacks({ stacks }: { stacks: Stack[] }) {
   return (
     <ul className="mb-4 flex w-full flex-wrap justify-start px-2">
       {stacks.map((stack) => (
-        <Badge
+        <span
           key={stack.key}
-          className="mx-2 my-1 min-w-[5rem] cursor-pointer rounded-full bg-slate-700 px-4 py-1 active:opacity-25 dark:bg-slate-100"
+          className="mx-2 my-1 min-w-[5rem] rounded-full bg-slate-700 px-4 py-1 active:opacity-25 dark:bg-slate-100 text-secondary text-xs shadow-sm"
         >
           <span className="w-full">{stack.name}</span>
-        </Badge>
+        </span>
       ))}
     </ul>
   );
