@@ -192,6 +192,7 @@ export const Data: Record<K, Project> = {
       "/project-images/nicelend/img-2.png",
       "/project-images/nicelend/img-3.png",
       "/project-images/nicelend/img-4.png",
+      "/project-images/nicelend/img-5.png",
     ],
     links: {
       appStore: "https://apps.apple.com/tw/app/id1526431273",
