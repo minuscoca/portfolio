@@ -108,7 +108,6 @@ function ProjectImage({ image }: { image: string }) {
       src={image}
       alt="project_sample_image"
       fill
-      priority
       className="origin-top-left object-cover object-center transition-all duration-300 group-hover:scale-105"
     />
   );

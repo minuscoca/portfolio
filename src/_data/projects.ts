@@ -151,7 +151,6 @@ export const Data: Record<K, Project> = {
       "/project-images/dim-admin/img-5.png",
       "/project-images/dim-admin/img-6.png",
       "/project-images/dim-admin/img-7.png",
-      "/project-images/dim-admin/img-8.png",
     ],
   },
   dim_pay: {
