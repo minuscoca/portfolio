@@ -1,18 +1,21 @@
 import { Section } from "./section";
 import { cn } from "@/lib/utils";
 import { Data, type Timeline } from "@/_data/timeline";
+import { FadeInContainer } from "@/components/transition/fade-in-container";
 
 export function ExperienceSection() {
   return (
-    <Section
-      id="experience"
-      title="Experience"
-      divider
-      fullwidth
-      className="max-w-5xl"
-    >
-      <Timeline data={Data} />
-    </Section>
+    <FadeInContainer>
+      <Section
+        id="experience"
+        title="Experience"
+        divider
+        fullwidth
+        className="max-w-5xl"
+      >
+        <Timeline data={Data} />
+      </Section>
+    </FadeInContainer>
   );
 }
 
