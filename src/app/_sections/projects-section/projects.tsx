@@ -19,41 +19,40 @@ import {
 } from "@/components/ui/tooltip";
 import { FadeInContainer } from "@/components/transition/fade-in-container";
 import { Carousel } from "@/components/carousel";
-import { ImagePlus } from "lucide-react";
+import { GalleryHorizontalEnd } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 export function Project({ project }: { project: Project }) {
   return (
-    <Dialog>
-      <FadeInContainer className="w-full">
-        <div
-          id={`#project_${[project.key]}`}
-          className="grid min-h-[30rem] w-full cursor-pointer grid-cols-1 overflow-hidden rounded-xl bg-secondary sm:grid-cols-2"
-        >
-          <DialogTrigger asChild>
-            <div className="relative group aspect-square sm:aspect-auto overflow-hidden">
-              <ProjectImage image={project.images[0]} />
-              <ProjectDetailButton />
+    <div id={`project_${project.key}`} className="scroll-mt-24"    >
+      <Dialog>
+        <FadeInContainer className="w-full">
+          <div className="grid min-h-[30rem] w-full cursor-pointer grid-cols-1 overflow-hidden rounded-xl bg-secondary sm:grid-cols-2"          >
+            <DialogTrigger asChild>
+              <div className="relative aspect-square sm:aspect-auto overflow-hidden group">
+                <ProjectImage image={project.images[0]} />
+                <ProjectDetailButton />
+              </div>
+            </DialogTrigger>
+            <div
+              id="project_detail"
+              className="relative flex flex-col px-4"
+            >
+              <ProjectHeader project={project} />
+              <ProjectDesc desc={project.desc} />
+              <ProjectStacks stacks={project.stacks} />
             </div>
-          </DialogTrigger>
-          <div
-            id="project_detail"
-            className="relative flex flex-col px-4"
-          >
-            <ProjectHeader project={project} />
-            <ProjectDesc desc={project.desc} />
-            <ProjectStacks stacks={project.stacks} />
           </div>
-        </div>
-      </FadeInContainer>
-      <DialogContent className="w-screen h-screen p-0 max-w-[initial] flex flex-col items-center justify-center">
-        <DialogHeader className="p-4">
-          <DialogTitle className="font-thin px-8 text-center">{project.title}</DialogTitle>
-          <DialogDescription className="text-center">{project.subtitle}</DialogDescription>
-        </DialogHeader>
-        <Carousel data={project.images} />
-      </DialogContent>
-    </Dialog>
+        </FadeInContainer>
+        <DialogContent className="w-screen h-screen p-0 max-w-[initial] flex flex-col items-center justify-center">
+          <DialogHeader className="p-4">
+            <DialogTitle className="font-thin px-8 text-center">{project.title}</DialogTitle>
+            <DialogDescription className="text-center">{project.subtitle}</DialogDescription>
+          </DialogHeader>
+          <Carousel data={project.images} />
+        </DialogContent>
+      </Dialog>
+    </div>
   );
 }
 
@@ -114,7 +113,7 @@ function ProjectImage({
       src={image}
       alt='project_sample_image'
       fill
-      className="object-cover object-center group-hover:scale-105 transition-all duration-300 origin-top-left"
+      className="object-cover object-center transition-all duration-300 origin-top-left group-hover:scale-105"
     />
   );
 }
@@ -124,7 +123,7 @@ function ProjectDetailButton() {
       <Tooltip>
         <TooltipTrigger asChild>
           <Button variant='secondary' size='icon' className="absolute left-0 bottom-0 m-2 p-2 rounded-full w-14 h-14 bg-slate-600 hover:opacity-90 active:opacity-80">
-            <ImagePlus size={32} className="stroke-slate-100" />
+            <GalleryHorizontalEnd size={32} className="stroke-slate-100" />
           </Button>
         </TooltipTrigger>
         <TooltipContent side="bottom">

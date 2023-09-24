@@ -56,6 +56,9 @@ module.exports = {
         "8": "8deg",
         "10": "10deg",
       },
+      borderWidth: {
+        "1": "1px"
+      },
       borderRadius: {
         lg: "var(--radius)",
         md: "calc(var(--radius) - 2px)",

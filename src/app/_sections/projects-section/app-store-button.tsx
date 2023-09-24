@@ -8,7 +8,7 @@ export function AppStoreButton({ href }: { href?: string }) {
     <Button
       variant="link"
       onClick={() => window.open(href, "_blank")}
-      className="font-thin text-sky-600 dark:text-sky-400"
+      className="font-thin text-cyan-600 dark:text-cyan-400"
     >
       前往 App Store
     </Button>
