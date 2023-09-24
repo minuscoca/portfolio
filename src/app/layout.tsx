@@ -4,6 +4,7 @@ import { Montserrat } from "next/font/google";
 import { ThemeProvider } from "@/components/theme/theme-provider";
 import { Navbar } from "@/components/navbar";
 import { ThemeToggle } from "@/components/theme/theme-toggle";
+import { Footer } from "@/components/footer";
 
 const montserrat = Montserrat({ subsets: ["latin"], weight: "200" });
 
@@ -27,6 +28,7 @@ export default function RootLayout({
           <LeftBackgroundDecorator />
           <RightBackgroundDecorator />
           {children}
+          <Footer />
           <ThemeToggle />
         </ThemeProvider>
       </body>

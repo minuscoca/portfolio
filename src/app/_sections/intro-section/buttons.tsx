@@ -8,7 +8,7 @@ import {
   Linkedin,
   CakeSlice,
 } from "lucide-react";
-import { Button, ButtonProps } from "@/components/ui/button";
+import { Button, type ButtonProps } from "@/components/ui/button";
 import {
   Tooltip,
   TooltipContent,
@@ -16,6 +16,7 @@ import {
   TooltipTrigger,
 } from "@/components/ui/tooltip";
 import { cn } from "@/lib/utils";
+import { type Side } from '@radix-ui/react-popper'
 
 export function ContactButton() {
   const router = useRouter();
@@ -67,8 +68,23 @@ export function GitlabButton() {
   );
 }
 
-function openUrl(url: string) {
-  window.open(url, '_blank')
+export function VisitProjectButton() {
+  return (
+    <IconButton
+      tooltip="Visit repository"
+      onClick={() => openUrl('https://gitlab.com/Minacoca/portfolio')}
+      className="w-8 h-8"
+      tooltipSide="right"
+    >
+      <Gitlab className="stroke-orange-500 dark:stroke-orange-400" size={18} />
+    </IconButton>
+  );
+}
+
+function openUrl(url?: string) {
+  if (typeof url === 'string') {
+    window.open(url, '_blank')
+  }
 }
 
 function PillButton({ children, className, ...props }: ButtonProps) {
@@ -89,9 +105,11 @@ function IconButton({
   tooltip,
   children,
   className,
+  tooltipSide,
   ...props
 }: {
   tooltip: string;
+  tooltipSide?: Side
 } & ButtonProps) {
   return (
     <TooltipProvider delayDuration={100}>
@@ -109,7 +127,7 @@ function IconButton({
             {children}
           </Button>
         </TooltipTrigger>
-        <TooltipContent side="bottom">
+        <TooltipContent side={tooltipSide || 'bottom'}>
           <p>{tooltip}</p>
         </TooltipContent>
       </Tooltip>
