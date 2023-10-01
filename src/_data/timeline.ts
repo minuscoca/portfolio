@@ -17,7 +17,7 @@ export const Data: Timeline[] = [
     icon: GraduationCap,
     desc: "",
     start: "",
-    end: "2017",
+    end: "2016",
     projects: [],
   },
   {
