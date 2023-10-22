@@ -47,7 +47,7 @@ export const Data: Timeline[] = [
     我在刻一的後期有接到點單的專案維護工作，內容一開始是維護既有的 React 客戶端點餐網站與 Angular 的餐廳端 POS 系統。後來轉為全職為點單寫新版的 React 與 React Native 專案，期間還陸續做了數個網頁與 App。\n
     除了前端之外在這期間也有接觸過一些後端的部分，曾以 Node.js/Express 實做處理外送訂單的後端伺服器，並在前端串接自己寫的 API。
     `,
-    start: "2020/9",
+    start: "2020/12",
     end: "至今",
     projects: [
       Projects.dim_pos,
