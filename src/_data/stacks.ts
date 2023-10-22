@@ -114,10 +114,15 @@ export const StateManagements: Record<StateLibrary, Stack> = {
   },
 };
 
-type TestLibrary = "jest" | "vitest";
+type TestLibrary = "jest" | "testing-Library";
 export const TestLibraries: Record<TestLibrary, Stack> = {
   jest: { key: "jest", name: "Jest", icon: "/stack-icons/jest.png" },
-  vitest: { key: "vitest", name: "vitest", icon: "/stack-icons/vitest.png" },
+  "testing-Library": {
+    key: "testing-Library",
+    name: "Testing Library",
+    icon: "/stack-icons/testing-Library.png",
+  },
+  // vitest: { key: "vitest", name: "vitest", icon: "/stack-icons/vitest.png" },
 };
 
 export const Stacks = {
