@@ -48,7 +48,7 @@ export const Data: Timeline[] = [
     除了前端之外在這期間也有接觸過一些後端的部分，曾以 Node.js/Express 實做處理外送訂單的後端伺服器，並在前端串接自己寫的 API。
     `,
     start: "2020/12",
-    end: "至今",
+    end: "2023/11",
     projects: [
       Projects.dim_pos,
       Projects.dim_order,
